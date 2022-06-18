@@ -104,9 +104,9 @@ This project requires NodeJS (version 16 or later), Yarn VScode. Node, Yarn and 
 
 # Usage
 
-Register, Login chat with a gamer, book them and play with them.
+Browse, Join and lookup helper tutorials
 
-_For more examples, please refer to the [FAQ](https://coding.global/)_
+_For more examples, please refer to the [FAQ](https://coding.global/faq)_
 
 <!-- ROADMAP -->
 
