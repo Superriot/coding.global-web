@@ -41,6 +41,7 @@ export default function NextImage({
       style={!widthIsSet ? { width: `${width}px` } : undefined}
       className={className}
     >
+    <>
       <Image
         className={clsxm(
           imgClassName,
@@ -54,6 +55,7 @@ export default function NextImage({
         layout='responsive'
         {...rest}
       />
+    </>
     </figure>
   );
 }

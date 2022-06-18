@@ -23,7 +23,16 @@ module.exports = {
           800: 'rgb(var(--tw-color-primary-800) / <alpha-value>)',
           900: 'rgb(var(--tw-color-primary-900) / <alpha-value>)',
         },
-        dark: '#222222',
+        discord: '#5865f2',
+        dark: {
+          // Input:normal
+          light: '#464649',
+          lightAlt: '#1f1f23',
+          // containers
+          DEFAULT: '#222222',
+          // Background Input:Focus
+          dark: '#0e0e10',
+        },
       },
       keyframes: {
         flicker: {
