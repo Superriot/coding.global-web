@@ -70,7 +70,7 @@ This project requires NodeJS (version 16 or later), Yarn VScode. Node, Yarn and 
   v16.5.0
   ```
 
-- important to install yarn packet manager globally
+- important to install yarn package manager globally
 
   ```sh
   npm i yarn -g
