@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import * as React from 'react';
 
 import Layout from '@/components/layout/Layout';
@@ -7,6 +6,7 @@ import UnderlineLink from '@/components/links/UnderlineLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
 
+import Discord from '~/svg/Discord.svg';
 /**
  * SVGR Support
  * Caveat: No React Props Type.
@@ -44,11 +44,25 @@ export default function HomePage() {
                 See the repository
               </ArrowLink>
             </p>
-            <div className='mt-4 flex'>
-              <Link className='bg-discord px-5 py-2.5' href='/faq'>
-                
-              </Link>
-              <Link href='/faq'>faq</Link>
+            <div className='mt-4 flex items-center space-x-2'>
+              <UnstyledLink
+                href='https://discord.gg/coding'
+                className='w-36 rounded-md bg-discord px-2'
+              >
+                <Discord className='h-10 text-9xl' />
+              </UnstyledLink>
+              <UnstyledLink
+                href='/faq'
+                className='h-10 w-32 rounded-md bg-discord text-3xl font-black'
+              >
+                FAQ
+              </UnstyledLink>
+              <UnstyledLink
+                href='/rules'
+                className='h-10 w-32 rounded-md bg-discord text-3xl font-black'
+              >
+                Rules
+              </UnstyledLink>
             </div>
             <iframe
               src='https://discord.com/widget?id=693908458986143824&theme=dark'

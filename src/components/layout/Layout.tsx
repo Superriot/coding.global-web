@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <NextImage
         useSkeleton
-        className='img-fade relative h-[100vh] object-top opacity-20'
+        className='img-fade relative h-[50vh] object-top opacity-20 md:h-[100vh]'
         imgClassName='object-top'
         src='/images/banner.gif'
         width='100%'
