@@ -41,21 +41,21 @@ export default function NextImage({
       style={!widthIsSet ? { width: `${width}px` } : undefined}
       className={className}
     >
-    <>
-      <Image
-        className={clsxm(
-          imgClassName,
-          status === 'loading' && clsxm('animate-pulse', blurClassName)
-        )}
-        src={src}
-        width={width}
-        height={height}
-        alt={alt}
-        onLoadingComplete={() => setStatus('complete')}
-        layout='responsive'
-        {...rest}
-      />
-    </>
+      <>
+        <Image
+          className={clsxm(
+            imgClassName,
+            status === 'loading' && clsxm('animate-pulse', blurClassName)
+          )}
+          src={src}
+          width={width}
+          height={height}
+          alt={alt}
+          onLoadingComplete={() => setStatus('complete')}
+          layout='responsive'
+          {...rest}
+        />
+      </>
     </figure>
   );
 }
