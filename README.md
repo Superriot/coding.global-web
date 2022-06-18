@@ -3,10 +3,10 @@
     <img src="public/favicon/favicon-96x96.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Coding.global Official Discort Website</h3>
+  <h3 align="center">Coding.global Official Discord Website</h3>
 
   <p align="center">
-    Official discord.gg/coding Website for the Coding Discord Server
+    Official <a href="https://discord.gg/coding">discord.gg/coding</a> Website for the Coding Discord Server
     <br />
     <a href="#about-the-project"><strong>Explore the docs »</strong></a>
     <br />
