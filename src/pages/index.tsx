@@ -46,7 +46,7 @@ export default function HomePage() {
             </p>
             <div className='mt-4 flex'>
               <Link className='bg-discord px-5 py-2.5' href='/faq'>
-                faq
+                
               </Link>
               <Link href='/faq'>faq</Link>
             </div>
