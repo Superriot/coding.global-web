@@ -25,7 +25,7 @@ export default function HomePage() {
         <section className='text-white'>
           <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
             <UnstyledLink href='https://discord.gg/coding'>
-              <div className='rounded-full bg-white py-5 px-1 pb-8 text-6xl font-medium'>
+              <div className='mt-5 rounded-full bg-white py-5 px-1 pb-8 text-6xl font-medium md:mt-0'>
                 <span className='mb-10 text-red-600'>{'<'}</span>
                 <span className='text-black'>/</span>
                 <span className='text-red-600'>{'>'}</span>
