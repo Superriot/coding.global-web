@@ -53,13 +53,13 @@ export default function HomePage() {
               </UnstyledLink>
               <UnstyledLink
                 href='/faq'
-                className='h-10 w-32 rounded-md bg-discord text-3xl font-black'
+                className='cursor-newtab h-10 w-32 rounded-md bg-discord text-3xl font-black'
               >
                 FAQ
               </UnstyledLink>
               <UnstyledLink
                 href='/rules'
-                className='h-10 w-32 rounded-md bg-discord text-3xl font-black'
+                className='cursor-newtab h-10 w-32 rounded-md bg-discord text-3xl font-black'
               >
                 Rules
               </UnstyledLink>
