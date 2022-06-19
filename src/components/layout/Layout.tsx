@@ -11,7 +11,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         className='img-fade relative h-[50vh] object-top opacity-20 md:h-[100vh]'
         imgClassName='object-top'
         src='/images/banner.webp'
-        width='100%'
         objectFit='cover'
         layout='fill'
         priority={false}

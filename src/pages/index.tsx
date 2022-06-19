@@ -77,7 +77,7 @@ export default function HomePage() {
               src='https://discord.com/widget?id=693908458986143824&theme=dark'
               width='350'
               height='500'
-              // allowTransparency={true}
+              title='Discord Widget'
               frameBorder='0'
               className='mt-4'
               sandbox='allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts'
