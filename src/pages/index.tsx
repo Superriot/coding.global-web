@@ -4,9 +4,9 @@ import Layout from '@/components/layout/Layout';
 import ArrowLink from '@/components/links/ArrowLink';
 import UnderlineLink from '@/components/links/UnderlineLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
+import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 
-import Discord from '~/svg/Discord.svg';
 /**
  * SVGR Support
  * Caveat: No React Props Type.
@@ -47,19 +47,28 @@ export default function HomePage() {
             <div className='mt-4 flex items-center space-x-2'>
               <UnstyledLink
                 href='https://discord.gg/coding'
-                className='w-36 rounded-md bg-discord px-2'
+                className='w-36 rounded-md bg-discord px-2 py-1 text-2xl font-black'
               >
-                <Discord className='h-10 text-9xl' />
+                <div className='flex items-center'>
+                  <NextImage
+                    className='mt-0.5 px-1'
+                    src='/images/discord.png'
+                    width='31'
+                    height='24'
+                    alt='Discord Logo'
+                  />
+                  <span>Discord</span>
+                </div>
               </UnstyledLink>
               <UnstyledLink
                 href='/faq'
-                className='cursor-newtab h-10 w-32 rounded-md bg-discord text-3xl font-black'
+                className='cursor-newtab w-32 rounded-md bg-discord py-1 text-2xl font-black'
               >
                 FAQ
               </UnstyledLink>
               <UnstyledLink
                 href='/rules'
-                className='cursor-newtab h-10 w-32 rounded-md bg-discord text-3xl font-black'
+                className='cursor-newtab w-32 rounded-md bg-discord py-1 text-2xl font-black'
               >
                 Rules
               </UnstyledLink>
