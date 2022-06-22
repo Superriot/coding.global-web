@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import { Accordion } from 'flowbite-react';
 import * as React from 'react';
 
