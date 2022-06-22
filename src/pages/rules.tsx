@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Accordion } from 'flowbite-react';
 import * as React from 'react';
 
@@ -17,31 +18,44 @@ export default function Faq() {
           <h1>FAQ</h1>
           <Accordion>
             <Accordion.Panel>
-              <Accordion.Title>Herzlich Willkommen auf unserem Coding Server!</Accordion.Title>
+              <Accordion.Title>
+                Herzlich Willkommen auf unserem Coding Server!
+              </Accordion.Title>
               <Accordion.Content>
                 <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                Wir sind engagierte Member, die sich beruflich und in ihrer Freizeit mit dem Programmieren und weiteren IT Themen beschäftigen. 
+                  Wir sind engagierte Member, die sich beruflich und in ihrer
+                  Freizeit mit dem Programmieren und weiteren IT Themen
+                  beschäftigen.
                 </p>
                 <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                Wir sind kein IT-Helpdesk, beantworten aber gerne zwischendurch eine ernst gemeinte und niveauvolle Frage.
+                  Wir sind kein IT-Helpdesk, beantworten aber gerne
+                  zwischendurch eine ernst gemeinte und niveauvolle Frage.
                 </p>
                 <p className='text-gray-500 dark:text-gray-400'>
-                Wir mögen es generell nicht so sehr, wenn der einzige Zweck des Aufenthalts der Beantwortung einer Frage dient und der Server danach wieder verlassen wird, sobald die Frage beantwortet wurde.
+                  Wir mögen es generell nicht so sehr, wenn der einzige Zweck
+                  des Aufenthalts der Beantwortung einer Frage dient und der
+                  Server danach wieder verlassen wird, sobald die Frage
+                  beantwortet wurde.
                 </p>
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
-              <Accordion.Title>
-                Welcome to our Coding Server!
-              </Accordion.Title>
+              <Accordion.Title>Welcome to our Coding Server!</Accordion.Title>
               <Accordion.Content>
                 <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                  We are dedicated members, who are professionally and in their spare time engaged in programming and other IT topics.<br/>
-                  Most of the programmers here are trainees, students, apprentices or have started their own business in IT.
+                  We are dedicated members, who are professionally and in their
+                  spare time engaged in programming and other IT topics.
+                  <br />
+                  Most of the programmers here are trainees, students,
+                  apprentices or have started their own business in IT.
                 </p>
                 <p className='text-gray-500 dark:text-gray-400'>
-                We are not an IT helpdesk, but we are happy to answer a serious and level-headed question in between.
-We generally don't like it so much when the sole purpose of being here is to answer a question and then leave the server once the question has been answered.
+                  We are not an IT helpdesk, but we are happy to answer a
+                  serious and level-headed question in between. We generally //
+                  eslint-disable-next-line react/no-unescaped-entities don't
+                  like it so much when the sole purpose of being here is to
+                  answer a question and then leave the server once the question
+                  has been answered.
                 </p>
               </Accordion.Content>
             </Accordion.Panel>
