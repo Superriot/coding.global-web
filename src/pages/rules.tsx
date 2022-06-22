@@ -52,10 +52,10 @@ export default function Faq() {
                 <p className='text-gray-500 dark:text-gray-400'>
                   We are not an IT helpdesk, but we are happy to answer a
                   serious and level-headed question in between. We generally //
-                  eslint-disable-next-line react/no-unescaped-entities don't
-                  like it so much when the sole purpose of being here is to
-                  answer a question and then leave the server once the question
-                  has been answered.
+                  eslint-disable-next-line react/no-unescaped-entities
+                  don&apos;t like it so much when the sole purpose of being here
+                  is to answer a question and then leave the server once the
+                  question has been answered.
                 </p>
               </Accordion.Content>
             </Accordion.Panel>
