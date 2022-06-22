@@ -14,7 +14,7 @@ export default function Faq() {
 
       <main>
         <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 text-white'>
-          <h1>FAQ</h1>
+          <h1 className='mb-2'>FAQ</h1>
           <Accordion>
             <Accordion.Panel>
               <Accordion.Title>What is Flowbite?</Accordion.Title>
