@@ -4,7 +4,7 @@ import * as React from 'react';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
-export default function Faq() {
+export default function Rules() {
   return (
     <Layout>
       <Seo
