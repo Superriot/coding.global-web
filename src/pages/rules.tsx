@@ -23,7 +23,7 @@ export default function Rules() {
                   <b>1. Discord Richtlinien</b>
                   <br />
                   1.1 Auf Programming [DE/EN] gelten die Discord
-                  Community-Richtlinien, diese können unter
+                  Community-Richtlinien, diese können unter 
                   <a
                     href="https://discord.com/guidelines"
                     rel="noindex, nofollow"
