@@ -14,7 +14,7 @@ export default function Rules() {
 
       <main>
         <section className="layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 text-white">
-          <h1 className="mb-2">Rules</h1>
+          <h1 className="mb-2">Regeln / Community Guidelines</h1>
           <Accordion>
             <Accordion.Panel>
               <Accordion.Title>Community Regeln</Accordion.Title>
@@ -23,13 +23,13 @@ export default function Rules() {
                   <b>1. Discord Richtlinien</b>
                   <br />
                   1.1 Auf Programming [DE/EN] gelten die Discord
-                  Community-Richtlinien, diese können unter 
+                  Community-Richtlinien, diese können unter
                   <a
                     href="https://discord.com/guidelines"
                     rel="noindex, nofollow"
                   >
                     https://discord.com/guidelines
-                  </a>{" "}
+                  </a>
                   eingesehen werden.
                   <br />
                   <br />
@@ -125,19 +125,100 @@ export default function Rules() {
               <Accordion.Title>Community Guidelines</Accordion.Title>
               <Accordion.Content>
                 <p className="mb-2 text-gray-500 dark:text-gray-400">
-                  We are dedicated members, who are professionally and in their
-                  spare time engaged in programming and other IT topics.
                   <br />
-                  Most of the programmers here are trainees, students,
-                  apprentices or have started their own business in IT.
-                </p>
-                <p className="text-gray-500 dark:text-gray-400">
-                  We are not an IT helpdesk, but we are happy to answer a
-                  serious and level-headed question in between. We generally //
-                  eslint-disable-next-line react/no-unescaped-entities
-                  don&apos;t like it so much when the sole purpose of being here
-                  is to answer a question and then leave the server once the
-                  question has been answered.
+                  1. Discord guidelines
+                  <br />
+                  1.1 The Discord Community Guidelines apply to Programming [DE
+                  / EN]; users can view these at{" "}
+                  <a
+                    href="https://discord.com/guidelines"
+                    rel="noindex, nofollow"
+                  >
+                    https://discord.com/guidelines
+                  </a>
+                  .
+                  <br />
+                  <br />
+                  2. Language
+                  <br />
+                  2.1 The language of our community is German and English. In
+                  the voice channel, “Public [DE]” German is the primary
+                  language. Users can speak English voluntarily. However, users
+                  must speak English in the Voice Channel “Public [EN]”.
+                  <br />
+                  <br />
+                  3. Asking questions
+                  <br />
+                  3.1 Nobody is obliged to help or answer a question. Help is
+                  generally free of charge.
+                  <br />
+                  3.2 Members with the role of “HELPER” have volunteered to help
+                  with questions.
+                  <br />
+                  3.3 Pinging members to expect a faster response is not
+                  allowed.
+                  <br />
+                  3.4 Don't ask questions like “Does anyone know about XY?” ask
+                  the question directly, see also ➔{" "}
+                  <a
+                    href="https://discord.com/guidelines"
+                    rel="noindex, nofollow"
+                  >
+                    https://discord.com/guidelines
+                  </a>
+                  .
+                  <br />
+                  3.5 Note the thread “How do I ask a good question?” on
+                  Stackoverflow ➔{" "}
+                  <a
+                    href="https://stackoverflow.com/help/how-to-ask"
+                    rel="noindex, nofollow"
+                  >
+                    https://stackoverflow.com/help/how-to-ask
+                  </a>
+                  .
+                  <br />
+                  <br />
+                  4. Recording
+                  <br />
+                  4.1 The recording of videos (screen sharing, webcam) and sound
+                  (voice chat) is not permitted on this Discord.
+                  <br />
+                  <br />
+                  5. Advertising
+                  <br />
+                  5.1 Any kind of third-party advertising is prohibited.
+                  <br />
+                  <br />
+                  6. Moderators
+                  <br />
+                  6.1 The moderation team has the right to take appropriate
+                  actions against a user, even if a certain rule has not been
+                  explicitly violated. Moderator actions can include escalating
+                  actions taken when the user refuses to obey decisions made.
+                  <br />
+                  <br />
+                  7. Direct messages
+                  <br />
+                  <br />
+                  7.1 Please refrain from sending direct messages to the
+                  administrators.
+                  <br />
+                  <br />
+                  8. Dissemination of personal information
+                  <br />
+                  <br />
+                  8.1 Dissemination of other people's personal information of
+                  any kind without their consent is prohibited and will result
+                  in a permanent ban. This includes, for example, first name,
+                  last name, address, mobile phone number or pictures, etc.
+                  <br />
+                  <br />
+                  9. Enforcement of a measure
+                  <br />
+                  <br />
+                  9.1 The interpretation of the rules is at the discretion of
+                  the respective administrator.
                 </p>
               </Accordion.Content>
             </Accordion.Panel>
