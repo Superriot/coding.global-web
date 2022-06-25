@@ -30,8 +30,8 @@ export default function Rules() {
                 3.1 Niemand ist verpflichtet zu helfen oder eine Frage zu beantworten. Hilfe erfolgt grundsätzlich kostenlos. 
                 3.2 Member mit der Rolle “HELPER” haben sich freiwillig bereit erklärt, bei Fragen zu helfen. 
                 3.3 Das pingen von Membern um eine schnellere Antwort zu erwarten, ist nicht erlaubt.
-                3.4 Stelle keine Fragen wie “Kennt sich jemand mit XY aus?” sondern stelle die Frage direkt siehe auch -> https://dontasktoask.com/.
-                3.5 Beachte den Thread “Wie stelle ich eine gute Frage?” auf Stackoverflow -> https://stackoverflow.com/help/how-to-ask. 
+                3.4 Stelle keine Fragen wie “Kennt sich jemand mit XY aus?” sondern stelle die Frage direkt siehe auch ➔ https://dontasktoask.com/.
+                3.5 Beachte den Thread “Wie stelle ich eine gute Frage?” auf Stackoverflow ➔ https://stackoverflow.com/help/how-to-ask. 
 
                 4. Aufzeichnung von Bild und Ton
                 4.1 Das Aufzeichnen oder Mitschneiden von Bild (Screensharing, Webcam etc..) und Ton (Voice Chat) ist auf diesem Discord nicht gestattet.
