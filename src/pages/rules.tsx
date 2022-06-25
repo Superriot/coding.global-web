@@ -24,7 +24,13 @@ export default function Rules() {
                   <br />
                   1.1 Auf Programming [DE/EN] gelten die Discord
                   Community-Richtlinien, diese können unter
-                  <a href="https://discord.com/guidelines" rel="noindex, nofollow">https://discord.com/guidelines</a> eingesehen werden.
+                  <a
+                    href="https://discord.com/guidelines"
+                    rel="noindex, nofollow"
+                  >
+                    https://discord.com/guidelines
+                  </a>{" "}
+                  eingesehen werden.
                   <br />
                   <br />
                   <b>2. Sprache</b>
@@ -48,10 +54,20 @@ export default function Rules() {
                   <br />
                   3.4 Stelle keine Fragen wie “Kennt sich jemand mit XY aus?”
                   sondern stelle die Frage direkt siehe auch ➔
-                  <a href="https://dontasktoask.com/" rel="noindex, nofollow">https://dontasktoask.com/</a>.
+                  <a href="https://dontasktoask.com/" rel="noindex, nofollow">
+                    https://dontasktoask.com/
+                  </a>
+                  .
                   <br />
                   3.5 Beachte den Thread “Wie stelle ich eine gute Frage?” auf
-                  Stackoverflow ➔ <a href="https://stackoverflow.com/help/how-to-ask" rel="noindex, nofollow">https://stackoverflow.com/help/how-to-ask</a>.
+                  Stackoverflow ➔{" "}
+                  <a
+                    href="https://stackoverflow.com/help/how-to-ask"
+                    rel="noindex, nofollow"
+                  >
+                    https://stackoverflow.com/help/how-to-ask
+                  </a>
+                  .
                   <br />
                   <br />
                   <b>4. Aufzeichnung von Bild und Ton</b>
