@@ -20,9 +20,10 @@ export default function Rules() {
               <Accordion.Title>Community Regeln</Accordion.Title>
               <Accordion.Content>
                 <p className="mb-2 text-gray-500 dark:text-gray-400">
-                  <b>1. Discord Richtlinien</b> 
-                  <br />1.1 Auf Programming [DE/EN] gelten die
-                  Discord Community-Richtlinien, diese können unter
+                  <b>1. Discord Richtlinien</b>
+                  <br />
+                  1.1 Auf Programming [DE/EN] gelten die Discord
+                  Community-Richtlinien, diese können unter
                   https://discord.com/guidelines eingesehen werden.
                   <br />
                   <br />
