@@ -142,7 +142,7 @@ export default function Rules() {
                   2. Language
                   <br />
                   2.1 The language of our community is German and English. In
-                  the voice channel, “Public [DE]” German is the primary
+                  the voice channel, &rsquo;Public [DE]&rsquo; German is the primary
                   language. Users can speak English voluntarily. However, users
                   must speak English in the Voice Channel “Public [EN]”.
                   <br />
@@ -158,7 +158,7 @@ export default function Rules() {
                   3.3 Pinging members to expect a faster response is not
                   allowed.
                   <br />
-                  3.4 Don't ask questions like “Does anyone know about XY?” ask
+                  3.4 Don't ask questions like &rsquo;Does anyone know about XY?&rsquo; ask
                   the question directly, see also ➔{" "}
                   <a
                     href="https://discord.com/guidelines"
@@ -208,7 +208,7 @@ export default function Rules() {
                   8. Dissemination of personal information
                   <br />
                   <br />
-                  8.1 Dissemination of other people's personal information of
+                  8.1 Dissemination of other people&apos;s personal information of
                   any kind without their consent is prohibited and will result
                   in a permanent ban. This includes, for example, first name,
                   last name, address, mobile phone number or pictures, etc.
