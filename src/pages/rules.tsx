@@ -125,7 +125,7 @@ export default function Rules() {
               <Accordion.Title>Community Guidelines</Accordion.Title>
               <Accordion.Content>
                 <p className="mb-2 text-gray-500 dark:text-gray-400">
-                <b>1. Discord guidelines</b>
+                  <b>1. Discord guidelines</b>
                   <br />
                   1.1 The Discord Community Guidelines apply to Programming [DE
                   / EN]; users can view these at{" "}
@@ -141,9 +141,10 @@ export default function Rules() {
                   <b>2. Language</b>
                   <br />
                   2.1 The language of our community is German and English. In
-                  the voice channel, &rsquo;Public [DE]&rsquo; German is the primary
-                  language. Users can speak English voluntarily. However, users
-                  must speak English in the Voice Channel “Public [EN]”.
+                  the voice channel, &rsquo;Public [DE]&rsquo; German is the
+                  primary language. Users can speak English voluntarily.
+                  However, users must speak English in the Voice Channel “Public
+                  [EN]”.
                   <br />
                   <br />
                   <b>3. Asking questions</b>
@@ -157,8 +158,8 @@ export default function Rules() {
                   3.3 Pinging members to expect a faster response is not
                   allowed.
                   <br />
-                  3.4 Don&apost ask questions like &rsquo;Does anyone know about XY?&rsquo; ask
-                  the question directly, see also ➔{" "}
+                  3.4 Don&apost ask questions like &rsquo;Does anyone know about
+                  XY?&rsquo; ask the question directly, see also ➔{" "}
                   <a
                     href="https://discord.com/guidelines"
                     rel="noindex, nofollow"
@@ -205,10 +206,11 @@ export default function Rules() {
                   <br />
                   <b>8. Dissemination of personal information</b>
                   <br />
-                  8.1 Dissemination of other people&apos;s personal information of
-                  any kind without their consent is prohibited and will result
-                  in a permanent ban. This includes, for example, first name,
-                  last name, address, mobile phone number or pictures, etc.
+                  8.1 Dissemination of other people&apos;s personal information
+                  of any kind without their consent is prohibited and will
+                  result in a permanent ban. This includes, for example, first
+                  name, last name, address, mobile phone number or pictures,
+                  etc.
                   <br />
                   <br />
                   <b>9. Enforcement of a measure</b>
