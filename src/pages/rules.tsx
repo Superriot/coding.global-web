@@ -22,38 +22,62 @@ export default function Rules() {
                 <p className="mb-2 text-gray-500 dark:text-gray-400">
                   1. Discord Richtlinien 1.1 Auf Programming [DE/EN] gelten die
                   Discord Community-Richtlinien, diese können unter
-                  https://discord.com/guidelines eingesehen werden. 2. Sprache
-                  2.1 Die Sprache unserer Community ist Deutsch und Englisch. Im
+                  https://discord.com/guidelines eingesehen werden. 
+                  <br/>
+                  <br/>2. Sprache
+                  <br/>2.1 Die Sprache unserer Community ist Deutsch und Englisch. Im
                   Voice Channel “Public [DE]” ist Deutsch die Hauptsprache,
                   Englisch kann auf freiwilliger Basis gesprochen werden. Im
                   Voice Channel “Public [EN]” muss englisch gesprochen werden.
-                  3. Stellen von Fragen 3.1 Niemand ist verpflichtet zu helfen
+                  <br/>
+                  3. Stellen von Fragen 
+                  <br/>3.1 Niemand ist verpflichtet zu helfen
                   oder eine Frage zu beantworten. Hilfe erfolgt grundsätzlich
-                  kostenlos. 3.2 Member mit der Rolle “HELPER” haben sich
-                  freiwillig bereit erklärt, bei Fragen zu helfen. 3.3 Das
+                  kostenlos. 
+                  <br/>3.2 Member mit der Rolle “HELPER” haben sich
+                  freiwillig bereit erklärt, bei Fragen zu helfen. 
+                  <br/>3.3 Das
                   pingen von Membern um eine schnellere Antwort zu erwarten, ist
-                  nicht erlaubt. 3.4 Stelle keine Fragen wie “Kennt sich jemand
+                  nicht erlaubt. 
+                  <br/>3.4 Stelle keine Fragen wie “Kennt sich jemand
                   mit XY aus?” sondern stelle die Frage direkt siehe auch ➔
-                  https://dontasktoask.com/. 3.5 Beachte den Thread “Wie stelle
+                  https://dontasktoask.com/. 
+                  <br/>3.5 Beachte den Thread “Wie stelle
                   ich eine gute Frage?” auf Stackoverflow ➔
-                  https://stackoverflow.com/help/how-to-ask. 4. Aufzeichnung von
-                  Bild und Ton 4.1 Das Aufzeichnen oder Mitschneiden von Bild
+                  https://stackoverflow.com/help/how-to-ask. 
+                  <br/>
+                  <br/>4. Aufzeichnung von
+                  Bild und Ton 
+                  <br/>4.1 Das Aufzeichnen oder Mitschneiden von Bild
                   (Screensharing, Webcam etc..) und Ton (Voice Chat) ist auf
-                  diesem Discord nicht gestattet. 5. Werbung 5.1 Jegliche Art
-                  der Fremdwerbung ist untersagt. 6. Moderatoren 6.1 Das
+                  diesem Discord nicht gestattet. 
+                  <br/>5. Werbung 
+                  <br/>5.1 Jegliche Art
+                  der Fremdwerbung ist untersagt. 
+                  <br/>6. Moderatoren 
+                  <br/>6.1 Das
                   Moderatorenteam hat das Recht, angemessene Maßnahmen gegen
                   einen Benutzer zu ergreifen, auch wenn eine bestimmte Regel
                   nicht ausdrücklich verletzt wurde. Dies kann die Eskalation
                   der ergriffenen Maßnahmen umfassen, wenn der Benutzer sich
-                  weigert, getroffene Entscheidungen zu befolgen. 7.
-                  Direktnachrichten 7.1 Bitte unterlasse es Direktnachrichten an
-                  die Administratoren zu senden. ⠀ 8. Verbreitung persönlicher
-                  Informationen 8.1 Das Verbreiten von persönlichen
+                  weigert, getroffene Entscheidungen zu befolgen. 
+                  <br/>
+                  <br/>7.
+                  Direktnachrichten 
+                  <br/>7.1 Bitte unterlasse es Direktnachrichten an
+                  die Administratoren zu senden.  
+                  <br/>
+                  <br/>8. Verbreitung persönlicher
+                  Informationen 
+                  <br/>8.1 Das Verbreiten von persönlichen
                   Informationen anderer Personen jeglicher Art ohne deren
                   Einwilligung ist Verboten und führt zu einem dauerhaften Ban.
                   Dazu zählen z. B. Vorname, Nachname, Adresse,
-                  Mobiltelefonnummer oder Bilder etc. 9. Durchsetzung einer
-                  Massnahme 9.1 Die Auslegung der Regeln liegen im Ermessen des
+                  Mobiltelefonnummer oder Bilder etc. 
+                  <br/>
+                  <br/>9. Durchsetzung einer
+                  Massnahme 
+                  <br/>9.1 Die Auslegung der Regeln liegen im Ermessen des
                   jeweiligen Administrators.
                 </p>
                 <p className="mb-2 text-gray-500 dark:text-gray-400">
