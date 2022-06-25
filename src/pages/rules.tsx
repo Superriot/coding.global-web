@@ -158,7 +158,7 @@ export default function Rules() {
                   3.3 Pinging members to expect a faster response is not
                   allowed.
                   <br />
-                  3.4 Don&apost ask questions like &rsquo;Does anyone know about
+                  3.4 Don&acute;t ask questions like &rsquo;Does anyone know about
                   XY?&rsquo; ask the question directly, see also ➔{" "}
                   <a
                     href="https://discord.com/guidelines"
@@ -206,7 +206,7 @@ export default function Rules() {
                   <br />
                   <b>8. Dissemination of personal information</b>
                   <br />
-                  8.1 Dissemination of other people&apos;s personal information
+                  8.1 Dissemination of other people&acute;s personal information
                   of any kind without their consent is prohibited and will
                   result in a permanent ban. This includes, for example, first
                   name, last name, address, mobile phone number or pictures,
