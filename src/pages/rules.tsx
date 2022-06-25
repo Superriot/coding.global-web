@@ -17,9 +17,7 @@ export default function Rules() {
           <h1 className='mb-2'>Rules</h1>
           <Accordion>
             <Accordion.Panel>
-              <Accordion.Title>
-                Herzlich Willkommen auf unserem Coding Server!
-              </Accordion.Title>
+              <Accordion.Title>Community Regeln</Accordion.Title>
               <Accordion.Content>
                 <p className='mb-2 text-gray-500 dark:text-gray-400'>
                   Wir sind engagierte Member, die sich beruflich und in ihrer
@@ -39,7 +37,7 @@ export default function Rules() {
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
-              <Accordion.Title>Welcome to our Coding Server!</Accordion.Title>
+              <Accordion.Title>Community Guidelines 🇺🇸 🇬🇧 🇦🇺</Accordion.Title>
               <Accordion.Content>
                 <p className='mb-2 text-gray-500 dark:text-gray-400'>
                   We are dedicated members, who are professionally and in their
