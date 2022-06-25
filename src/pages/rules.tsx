@@ -125,8 +125,7 @@ export default function Rules() {
               <Accordion.Title>Community Guidelines</Accordion.Title>
               <Accordion.Content>
                 <p className="mb-2 text-gray-500 dark:text-gray-400">
-                  <br />
-                  1. Discord guidelines
+                <b>1. Discord guidelines</b>
                   <br />
                   1.1 The Discord Community Guidelines apply to Programming [DE
                   / EN]; users can view these at{" "}
@@ -139,7 +138,7 @@ export default function Rules() {
                   .
                   <br />
                   <br />
-                  2. Language
+                  <b>2. Language</b>
                   <br />
                   2.1 The language of our community is German and English. In
                   the voice channel, &rsquo;Public [DE]&rsquo; German is the primary
@@ -147,7 +146,7 @@ export default function Rules() {
                   must speak English in the Voice Channel “Public [EN]”.
                   <br />
                   <br />
-                  3. Asking questions
+                  <b>3. Asking questions
                   <br />
                   3.1 Nobody is obliged to help or answer a question. Help is
                   generally free of charge.
@@ -179,18 +178,18 @@ export default function Rules() {
                   .
                   <br />
                   <br />
-                  4. Recording
+                  <b>4. Recording</b>
                   <br />
                   4.1 The recording of videos (screen sharing, webcam) and sound
                   (voice chat) is not permitted on this Discord.
                   <br />
                   <br />
-                  5. Advertising
+                  <b>5. Advertising</b>
                   <br />
                   5.1 Any kind of third-party advertising is prohibited.
                   <br />
                   <br />
-                  6. Moderators
+                  <b>6. Moderators</b>
                   <br />
                   6.1 The moderation team has the right to take appropriate
                   actions against a user, even if a certain rule has not been
@@ -198,15 +197,13 @@ export default function Rules() {
                   actions taken when the user refuses to obey decisions made.
                   <br />
                   <br />
-                  7. Direct messages
-                  <br />
+                  <b>7. Direct messages</b>
                   <br />
                   7.1 Please refrain from sending direct messages to the
                   administrators.
                   <br />
                   <br />
-                  8. Dissemination of personal information
-                  <br />
+                  <b>8. Dissemination of personal information</b>
                   <br />
                   8.1 Dissemination of other people&apos;s personal information of
                   any kind without their consent is prohibited and will result
@@ -214,8 +211,7 @@ export default function Rules() {
                   last name, address, mobile phone number or pictures, etc.
                   <br />
                   <br />
-                  9. Enforcement of a measure
-                  <br />
+                  <b>9. Enforcement of a measure</b>
                   <br />
                   9.1 The interpretation of the rules is at the discretion of
                   the respective administrator.
