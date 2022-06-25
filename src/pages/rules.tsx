@@ -146,7 +146,7 @@ export default function Rules() {
                   must speak English in the Voice Channel “Public [EN]”.
                   <br />
                   <br />
-                  <b>3. Asking questions
+                  <b>3. Asking questions</b>
                   <br />
                   3.1 Nobody is obliged to help or answer a question. Help is
                   generally free of charge.
