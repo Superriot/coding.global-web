@@ -158,7 +158,7 @@ export default function Rules() {
                   3.3 Pinging members to expect a faster response is not
                   allowed.
                   <br />
-                  3.4 Don't ask questions like &rsquo;Does anyone know about XY?&rsquo; ask
+                  3.4 Don&apost ask questions like &rsquo;Does anyone know about XY?&rsquo; ask
                   the question directly, see also ➔{" "}
                   <a
                     href="https://discord.com/guidelines"
