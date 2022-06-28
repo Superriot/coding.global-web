@@ -1,32 +1,32 @@
-import { Accordion } from "flowbite-react";
-import * as React from "react";
+import { Accordion } from 'flowbite-react';
+import * as React from 'react';
 
-import Layout from "@/components/layout/Layout";
-import Seo from "@/components/Seo";
+import Layout from '@/components/layout/Layout';
+import Seo from '@/components/Seo';
 
 export default function Rules() {
   return (
     <Layout>
       <Seo
-        templateTitle="Components"
-        description="Pre-built components with awesome default"
+        templateTitle='Components'
+        description='Pre-built components with awesome default'
       />
 
       <main>
-        <section className="layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 text-white">
-          <h1 className="mb-2">Regeln / Community Guidelines</h1>
+        <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 text-white'>
+          <h1 className='mb-2'>Regeln / Community Guidelines</h1>
           <Accordion>
             <Accordion.Panel>
               <Accordion.Title>Community Regeln</Accordion.Title>
               <Accordion.Content>
-                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                <p className='mb-2 text-gray-500 dark:text-gray-400'>
                   <b>1. Discord Richtlinien</b>
                   <br />
                   1.1 Auf Programming [DE/EN] gelten die Discord
                   Community-Richtlinien, diese können unter
                   <a
-                    href="https://discord.com/guidelines"
-                    rel="noindex, nofollow"
+                    href='https://discord.com/guidelines'
+                    rel='noindex, nofollow'
                   >
                     https://discord.com/guidelines
                   </a>
@@ -54,16 +54,16 @@ export default function Rules() {
                   <br />
                   3.4 Stelle keine Fragen wie “Kennt sich jemand mit XY aus?”
                   sondern stelle die Frage direkt siehe auch ➔
-                  <a href="https://dontasktoask.com/" rel="noindex, nofollow">
+                  <a href='https://dontasktoask.com/' rel='noindex, nofollow'>
                     https://dontasktoask.com/
                   </a>
                   .
                   <br />
                   3.5 Beachte den Thread “Wie stelle ich eine gute Frage?” auf
-                  Stackoverflow ➔{" "}
+                  Stackoverflow ➔{' '}
                   <a
-                    href="https://stackoverflow.com/help/how-to-ask"
-                    rel="noindex, nofollow"
+                    href='https://stackoverflow.com/help/how-to-ask'
+                    rel='noindex, nofollow'
                   >
                     https://stackoverflow.com/help/how-to-ask
                   </a>
@@ -109,11 +109,11 @@ export default function Rules() {
                   9.1 Die Auslegung der Regeln liegen im Ermessen des jeweiligen
                   Administrators.
                 </p>
-                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                <p className='mb-2 text-gray-500 dark:text-gray-400'>
                   Wir sind kein IT-Helpdesk, beantworten aber gerne
                   zwischendurch eine ernst gemeinte und niveauvolle Frage.
                 </p>
-                <p className="text-gray-500 dark:text-gray-400">
+                <p className='text-gray-500 dark:text-gray-400'>
                   Wir mögen es generell nicht so sehr, wenn der einzige Zweck
                   des Aufenthalts der Beantwortung einer Frage dient und der
                   Server danach wieder verlassen wird, sobald die Frage
@@ -124,14 +124,14 @@ export default function Rules() {
             <Accordion.Panel>
               <Accordion.Title>Community Guidelines</Accordion.Title>
               <Accordion.Content>
-                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                <p className='mb-2 text-gray-500 dark:text-gray-400'>
                   <b>1. Discord guidelines</b>
                   <br />
                   1.1 The Discord Community Guidelines apply to Programming [DE
-                  / EN]; users can view these at{" "}
+                  / EN]; users can view these at{' '}
                   <a
-                    href="https://discord.com/guidelines"
-                    rel="noindex, nofollow"
+                    href='https://discord.com/guidelines'
+                    rel='noindex, nofollow'
                   >
                     https://discord.com/guidelines
                   </a>
@@ -159,20 +159,20 @@ export default function Rules() {
                   allowed.
                   <br />
                   3.4 Don&acute;t ask questions like &rsquo;Does anyone know
-                  about XY?&rsquo; ask the question directly, see also ➔{" "}
+                  about XY?&rsquo; ask the question directly, see also ➔{' '}
                   <a
-                    href="https://discord.com/guidelines"
-                    rel="noindex, nofollow"
+                    href='https://discord.com/guidelines'
+                    rel='noindex, nofollow'
                   >
                     https://discord.com/guidelines
                   </a>
                   .
                   <br />
                   3.5 Note the thread “How do I ask a good question?” on
-                  Stackoverflow ➔{" "}
+                  Stackoverflow ➔{' '}
                   <a
-                    href="https://stackoverflow.com/help/how-to-ask"
-                    rel="noindex, nofollow"
+                    href='https://stackoverflow.com/help/how-to-ask'
+                    rel='noindex, nofollow'
                   >
                     https://stackoverflow.com/help/how-to-ask
                   </a>
