@@ -3,8 +3,6 @@ version: "3.8"
 services:
   coding-global-web:
     container_name: coding-global-web
-    ports:
-      - 3000
     build:
       context: ./
       dockerfile: Dockerfile
