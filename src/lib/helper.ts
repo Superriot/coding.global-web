@@ -10,7 +10,7 @@ export function openGraph({
   siteName,
   templateTitle,
   description,
-  logo = 'https://i.imgur.com/l64vHMQ.jpg',
+  logo = 'https://raw.githubusercontent.com/Don-Cryptus/coding.global-web/main/public/images/openGraph-logo.jpg',
 }: OpenGraphType): string {
   const ogLogo = encodeURIComponent(logo);
   const ogSiteName = encodeURIComponent(siteName.trim());
