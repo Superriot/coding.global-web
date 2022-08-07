@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import { openGraph } from '@/lib/helper';
+// import { openGraph } from '@/lib/helper';
 
 const defaultMeta = {
   title: 'Official Coding Website',
@@ -29,13 +29,13 @@ export default function Seo(props: SeoProps) {
     ? `${props.templateTitle} | ${meta.siteName}`
     : meta.title;
 
-  // Use siteName if there is templateTitle
-  // but show full title if there is none
-  meta['image'] = openGraph({
-    description: meta.description,
-    siteName: props.templateTitle ? meta.siteName : meta.title,
-    templateTitle: props.templateTitle,
-  });
+  // // Use siteName if there is templateTitle
+  // // but show full title if there is none
+  // meta['image'] = openGraph({
+  //   description: meta.description,
+  //   siteName: props.templateTitle ? meta.siteName : meta.title,
+  //   templateTitle: props.templateTitle,
+  // });
 
   return (
     <Head>
