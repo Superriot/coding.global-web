@@ -4,12 +4,18 @@ export default function Team() {
   return (
     <Layout>
       <main>
-        <section className='layout my-10 justify-center rounded-md bg-dark-light bg-opacity-80 p-10 text-white '>
-          <h1 className='text-center'>Our Team</h1>
-          <div className='mt-8 flex justify-between'>
-            <div className='h-90 box-content w-60 rounded-3xl border-4 p-4 hover:drop-shadow-2xl'></div>
-            <div className='box-content h-80 w-60 rounded-3xl border-4 p-4'></div>
-            <div className='box-content h-80 w-60 rounded-3xl border-4 p-4'></div>
+        <section className='layout my-10  rounded-md bg-dark-light bg-opacity-80 text-white '>
+          <h1 className='-mt-10 text-center'>Our Team</h1>
+          <div className='mr-10  -mt-20 ml-5 flex h-screen items-center justify-center self-stretch'>
+            <div className='-mt-24 mr-10 box-content h-80 w-80 space-x-4 rounded-3xl border-4 p-4'>
+              <div className='text-center'>Don Diabolic</div>
+            </div>
+            <div className='w-425.333 -mt-24 mr-10 box-content h-80 w-80 space-x-4 rounded-3xl border-4 p-4 '>
+              Anes
+            </div>
+            <div className='-mt-24 box-content h-80 w-80 rounded-3xl border-4 p-4'>
+              Azer
+            </div>
           </div>
         </section>
       </main>
