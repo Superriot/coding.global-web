@@ -10,8 +10,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        secondary: ['Hanson'],
         primary: ['Inter', ...fontFamily.sans],
       },
+
       colors: {
         primary: {
           // Customize it on globals.css :root
@@ -66,3 +68,4 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/forms'), require('flowbite/plugin')],
 };
+
