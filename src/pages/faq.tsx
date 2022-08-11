@@ -14,7 +14,7 @@ export default function Faq() {
 
       <main>
         <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 text-white'>
-          <h1 className='mb-2'>FAQ</h1>
+          <h1 className='mb-2 text-center font-secondary'>FAQs</h1>
           <Accordion>
             <Accordion.Panel>
               <Accordion.Title>Javascript/Typescript</Accordion.Title>
@@ -37,7 +37,7 @@ export default function Faq() {
                   <a
                     href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/'
                     rel='nofollow'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
+                    className='text-gray-400 hover:underline'
                   >
                     Javascript
                   </a>
@@ -59,7 +59,7 @@ export default function Faq() {
                   <a
                     href='https://www.codecademy.com/'
                     rel='nofollow'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
+                    className='text-gray-400 hover:underline'
                   >
                     python
                   </a>
@@ -82,7 +82,7 @@ export default function Faq() {
                   <a
                     href='https://www.codecademy.com/'
                     rel='nofollow'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
+                    className='text-gray-400 hover:underline'
                   >
                     Java
                   </a>
@@ -104,7 +104,7 @@ export default function Faq() {
                   <a
                     href='https://www.codecademy.com/'
                     rel='nofollow'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
+                    className='text-gray-400 hover:underline'
                   >
                     c ++
                   </a>
@@ -125,7 +125,7 @@ export default function Faq() {
                   <a
                     href='https://docs.microsoft.com/de-de/dotnet/csharp/tour-of-csharp/tutorials/'
                     rel='nofollow'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
+                    className='text-gray-400 hover:underline'
                   >
                     c#
                   </a>
@@ -134,9 +134,9 @@ export default function Faq() {
                   <a
                     href='https://www.udemy.com/course/complete-csharp-masterclass/'
                     rel='nofollow'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
+                    className='text-gray-400 hover:underline'
                   >
-                    c#
+                    c#(udemy)
                   </a>
                 </li>
               </Accordion.Content>
