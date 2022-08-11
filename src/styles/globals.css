@@ -176,3 +176,19 @@ input::-webkit-inner-spin-button {
     background-size: 0 2px, 100% 2px;
   }
 }
+
+.btn {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+button[class] {
+  @apply text-black hover:bg-gray-500 focus:bg-gray-600 !important;
+}
+
+section h1 {
+  @apply text-black !important;
+}
+
+p[class] {
+  @apply text-black !important;
+}

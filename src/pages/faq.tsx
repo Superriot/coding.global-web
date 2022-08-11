@@ -17,88 +17,128 @@ export default function Faq() {
           <h1 className='mb-2'>FAQ</h1>
           <Accordion>
             <Accordion.Panel>
-              <Accordion.Title>What is Flowbite?</Accordion.Title>
+              <Accordion.Title>Javascript/Typescript</Accordion.Title>
               <Accordion.Content>
-                <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                  Flowbite is an open-source library of interactive components
-                  built on top of Tailwind CSS including buttons, dropdowns,
-                  modals, navbars, and more.
+                <h1 className='text-gray-500 dark:text-gray-400'></h1>
+                <br />
+                <p className='btn'>
+                  JavaScript is a text-based programming language used both on
+                  the client-side and server-side that allows you to make web
+                  pages interactive. Where HTML and CSS are languages that give
+                  structure and style to web pages, JavaScript gives web pages.{' '}
+                  <br />
+                  interactive elements that engage a user TypeScript is
+                  JavaScript with syntax for types. TypeScript is a strongly
+                  typed programming language that builds on JavaScript, giving
+                  you better tooling at any scale.
+                  <br /> you can lern javascript here:
                 </p>
-                <p className='text-gray-500 dark:text-gray-400'>
-                  Check out this guide to learn how to{' '}
+                <li>
                   <a
-                    href='https://flowbite.com/docs/getting-started/introduction/'
+                    href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/'
+                    rel='nofollow'
                     className='text-blue-600 hover:underline dark:text-blue-500'
                   >
-                    get started
-                  </a>{' '}
-                  and start developing websites even faster with components on
-                  top of Tailwind CSS.
-                </p>
+                    Javascript
+                  </a>
+                </li>
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
-              <Accordion.Title>
-                Is there a Figma file available?
-              </Accordion.Title>
+              <Accordion.Title>Python</Accordion.Title>
               <Accordion.Content>
-                <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                  Flowbite is first conceptualized and designed using the Figma
-                  software so everything you see in the library has a design
-                  equivalent in our Figma file.
-                </p>
                 <p className='text-gray-500 dark:text-gray-400'>
-                  Check out the{' '}
+                  Python is a computer programming language often used to build
+                  websites and software, automate tasks, and conduct data
+                  analysis. Python is a general-purpose language, meaning it can
+                  be used to create a variety of different programs and isnt
+                  specialized for any specific problems.
+                  <br /> You Can lern python here:
+                </p>
+                <li>
                   <a
-                    href='https://flowbite.com/figma/'
+                    href='https://www.codecademy.com/'
+                    rel='nofollow'
                     className='text-blue-600 hover:underline dark:text-blue-500'
                   >
-                    Figma design system
-                  </a>{' '}
-                  based on the utility classes from Tailwind CSS and components
-                  from Flowbite.
-                </p>
+                    python
+                  </a>
+                </li>
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
-              <Accordion.Title>
-                What are the differences between Flowbite and Tailwind UI?
-              </Accordion.Title>
+              <Accordion.Title>Java</Accordion.Title>
               <Accordion.Content>
-                <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                  The main difference is that the core components from Flowbite
-                  are open source under the MIT license, whereas Tailwind UI is
-                  a paid product. Another difference is that Flowbite relies on
-                  smaller and standalone components, whereas Tailwind UI offers
-                  sections of pages.
+                <p className='text-gray-500 dark:text-gray-400'>
+                  Developers use Java to construct applications in laptops, data
+                  centres, game consoles, scientific supercomputers, cell
+                  phones, and other devices. Java is the worlds third most
+                  popular programming language, after Python and C ++ according
+                  to the TIOBE index, which evaluates programming language
+                  popularity <br />
+                  you can lern java here:
                 </p>
-                <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                  However, we actually recommend using both Flowbite, Flowbite
-                  Pro, and even Tailwind UI as there is no technical reason
-                  stopping you from using the best of two worlds.
+                <li>
+                  <a
+                    href='https://www.codecademy.com/'
+                    rel='nofollow'
+                    className='text-blue-600 hover:underline dark:text-blue-500'
+                  >
+                    Java
+                  </a>
+                </li>
+              </Accordion.Content>
+            </Accordion.Panel>
+            <Accordion.Panel>
+              <Accordion.Title>c ++</Accordion.Title>
+              <Accordion.Content>
+                <p className='text-gray-500 dark:text-gray-400'>
+                  C++ is a powerful general-purpose programming language. It can
+                  be used to develop operating systems, browsers, games, and so
+                  on. C++ supports different ways of programming like
+                  procedural, object-oriented, functional, and so on.
+                  <br />
+                  you can lern java here:
                 </p>
-                <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                  Learn more about these technologies:
+                <li>
+                  <a
+                    href='https://www.codecademy.com/'
+                    rel='nofollow'
+                    className='text-blue-600 hover:underline dark:text-blue-500'
+                  >
+                    c ++
+                  </a>
+                </li>
+              </Accordion.Content>
+            </Accordion.Panel>
+            <Accordion.Panel>
+              <Accordion.Title>c#</Accordion.Title>
+              <Accordion.Content>
+                <p className='text-gray-500 dark:text-gray-400'>
+                  What is C# used for? Like other general-purpose programming
+                  languages, C# can be used to create a number of different
+                  programs and applications: mobile apps, desktop apps,
+                  cloud-based services, websites, enterprise software and games.
+                  Lots and lots of games.
                 </p>
-                <ul className='list-disc pl-5 text-gray-500 dark:text-gray-400'>
-                  <li>
-                    <a
-                      href='https://flowbite.com/pro/'
-                      className='text-blue-600 hover:underline dark:text-blue-500'
-                    >
-                      Flowbite Pro
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href='https://tailwindui.com/'
-                      rel='nofollow'
-                      className='text-blue-600 hover:underline dark:text-blue-500'
-                    >
-                      Tailwind UI
-                    </a>
-                  </li>
-                </ul>
+                <li>
+                  <a
+                    href='https://docs.microsoft.com/de-de/dotnet/csharp/tour-of-csharp/tutorials/'
+                    rel='nofollow'
+                    className='text-blue-600 hover:underline dark:text-blue-500'
+                  >
+                    c#
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href='https://www.udemy.com/course/complete-csharp-masterclass/'
+                    rel='nofollow'
+                    className='text-blue-600 hover:underline dark:text-blue-500'
+                  >
+                    c#
+                  </a>
+                </li>
               </Accordion.Content>
             </Accordion.Panel>
           </Accordion>
