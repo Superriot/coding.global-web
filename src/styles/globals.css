@@ -184,5 +184,5 @@ button[class*='text-gray-900'] {
 
 /* Not Active */
 button:not([class*='text-gray-900']) {
-  @apply bg-transparent text-white hover:bg-white hover:text-black !important;
+  @apply bg-transparent text-white  hover:bg-white hover:text-black !important;
 }

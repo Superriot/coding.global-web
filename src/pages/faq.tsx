@@ -1,4 +1,5 @@
 import { Accordion } from 'flowbite-react';
+import Link from 'next/link';
 import * as React from 'react';
 
 import Layout from '@/components/layout/Layout';
@@ -13,15 +14,19 @@ export default function Faq() {
       />
 
       <main>
-        <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 text-white'>
-          <h1 className='mb-2 text-center font-secondary'>FAQs</h1>
+        <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 '>
+          <Link
+            className='rounded bg-blue-500  py-2 px-4 font-bold hover:bg-blue-700'
+            href='/'
+          >
+            <button className='absolute mt-auto'>Home</button>
+          </Link>
+          <h1 className='mb-2 text-center font-secondary text-white'>FAQs</h1>
           <Accordion>
             <Accordion.Panel>
               <Accordion.Title>Javascript/Typescript</Accordion.Title>
               <Accordion.Content>
-                <h1 className='text-gray-500 dark:text-gray-400'></h1>
-                <br />
-                <p className='btn'>
+                <p className='text-white'>
                   JavaScript is a text-based programming language used both on
                   the client-side and server-side that allows you to make web
                   pages interactive. Where HTML and CSS are languages that give
@@ -36,8 +41,9 @@ export default function Faq() {
                 <p>
                   <a
                     href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/'
-                    rel='nofollow'
-                    className='text-gray-400 hover:underline'
+                    target='_blank'
+                    className=' text-white underline hover:underline '
+                    rel='noreferrer'
                   >
                     Javascript
                   </a>
@@ -47,19 +53,20 @@ export default function Faq() {
             <Accordion.Panel>
               <Accordion.Title>Python</Accordion.Title>
               <Accordion.Content>
-                <p className='text-gray-500 dark:text-gray-400'>
+                <p className='text-white '>
                   Python is a computer programming language often used to build
                   websites and software, automate tasks, and conduct data
                   analysis. Python is a general-purpose language, meaning it can
                   be used to create a variety of different programs and isnt
                   specialized for any specific problems.
-                  <br /> You Can lern python here:
+                  <br /> You Can learn python here:
                 </p>
                 <p>
                   <a
                     href='https://www.codecademy.com/'
-                    rel='nofollow'
-                    className='text-gray-400 hover:underline'
+                    target='_blank'
+                    className=' text-white underline hover:underline '
+                    rel='noreferrer'
                   >
                     python
                   </a>
@@ -69,20 +76,21 @@ export default function Faq() {
             <Accordion.Panel>
               <Accordion.Title>Java</Accordion.Title>
               <Accordion.Content>
-                <p className='text-gray-500 dark:text-gray-400'>
+                <p className='text-white '>
                   Developers use Java to construct applications in laptops, data
                   centres, game consoles, scientific supercomputers, cell
                   phones, and other devices. Java is the worlds third most
                   popular programming language, after Python and C ++ according
                   to the TIOBE index, which evaluates programming language
                   popularity <br />
-                  you can lern java here:
+                  you can learn java here:
                 </p>
                 <p>
                   <a
                     href='https://www.codecademy.com/'
-                    rel='nofollow'
-                    className='text-gray-400 hover:underline'
+                    target='_blank'
+                    className=' text-white underline hover:underline '
+                    rel='noreferrer'
                   >
                     Java
                   </a>
@@ -90,51 +98,56 @@ export default function Faq() {
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
-              <Accordion.Title>c ++</Accordion.Title>
+              <Accordion.Title>C++</Accordion.Title>
               <Accordion.Content>
-                <p className='text-gray-500 dark:text-gray-400'>
+                <p className='text-white '>
                   C++ is a powerful general-purpose programming language. It can
                   be used to develop operating systems, browsers, games, and so
                   on. C++ supports different ways of programming like
                   procedural, object-oriented, functional, and so on.
                   <br />
-                  you can lern java here:
+                  you can learn java here:
                 </p>
                 <p>
                   <a
                     href='https://www.codecademy.com/'
-                    rel='nofollow'
-                    className='text-gray-400 hover:underline'
+                    target='_blank'
+                    className=' text-white underline hover:underline '
+                    rel='noreferrer'
                   >
-                    c ++
+                    C++
                   </a>
                 </p>
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
-              <Accordion.Title>c#</Accordion.Title>
+              <Accordion.Title>C#</Accordion.Title>
               <Accordion.Content>
-                <p className='text-gray-500 dark:text-gray-400'>
+                <p className='text-white'>
                   What is C# used for? Like other general-purpose programming
                   languages, C# can be used to create a number of different
                   programs and applications: mobile apps, desktop apps,
                   cloud-based services, websites, enterprise software and games.
                   Lots and lots of games.
+                  <br />
+                  You can learn C# here:
                 </p>
                 <p>
                   <a
                     href='https://docs.microsoft.com/de-de/dotnet/csharp/tour-of-csharp/tutorials/'
-                    rel='nofollow'
-                    className='text-gray-400 hover:underline'
+                    target='_blank'
+                    className=' text-white underline hover:underline '
+                    rel='noreferrer'
                   >
-                    c#
+                    C#
                   </a>
                 </p>
                 <p>
                   <a
                     href='https://www.udemy.com/course/complete-csharp-masterclass/'
-                    rel='nofollow'
-                    className='text-gray-400 hover:underline '
+                    target='_blank'
+                    className=' text-white underline hover:underline '
+                    rel='noreferrer'
                   >
                     c#(udemy)
                   </a>
