@@ -177,6 +177,12 @@ input::-webkit-inner-spin-button {
   }
 }
 
-button[class] {
-  @apply text-black hover:bg-gray-500 focus:bg-gray-600 !important;
+/* Active */
+button[class*='text-gray-900'] {
+  @apply bg-white text-black !important;
+}
+
+/* Not Active */
+button:not([class*='text-gray-900']) {
+  @apply bg-transparent text-white hover:bg-white hover:text-black !important;
 }
