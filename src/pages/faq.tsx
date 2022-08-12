@@ -33,7 +33,7 @@ export default function Faq() {
                   you better tooling at any scale.
                   <br /> you can lern javascript here:
                 </p>
-                <li>
+                <p>
                   <a
                     href='https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/'
                     rel='nofollow'
@@ -41,7 +41,7 @@ export default function Faq() {
                   >
                     Javascript
                   </a>
-                </li>
+                </p>
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
@@ -55,7 +55,7 @@ export default function Faq() {
                   specialized for any specific problems.
                   <br /> You Can lern python here:
                 </p>
-                <li>
+                <p>
                   <a
                     href='https://www.codecademy.com/'
                     rel='nofollow'
@@ -63,7 +63,7 @@ export default function Faq() {
                   >
                     python
                   </a>
-                </li>
+                </p>
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
@@ -78,7 +78,7 @@ export default function Faq() {
                   popularity <br />
                   you can lern java here:
                 </p>
-                <li>
+                <p>
                   <a
                     href='https://www.codecademy.com/'
                     rel='nofollow'
@@ -86,7 +86,7 @@ export default function Faq() {
                   >
                     Java
                   </a>
-                </li>
+                </p>
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
@@ -100,7 +100,7 @@ export default function Faq() {
                   <br />
                   you can lern java here:
                 </p>
-                <li>
+                <p>
                   <a
                     href='https://www.codecademy.com/'
                     rel='nofollow'
@@ -108,7 +108,7 @@ export default function Faq() {
                   >
                     c ++
                   </a>
-                </li>
+                </p>
               </Accordion.Content>
             </Accordion.Panel>
             <Accordion.Panel>
@@ -121,7 +121,7 @@ export default function Faq() {
                   cloud-based services, websites, enterprise software and games.
                   Lots and lots of games.
                 </p>
-                <li>
+                <p>
                   <a
                     href='https://docs.microsoft.com/de-de/dotnet/csharp/tour-of-csharp/tutorials/'
                     rel='nofollow'
@@ -129,16 +129,16 @@ export default function Faq() {
                   >
                     c#
                   </a>
-                </li>
-                <li>
+                </p>
+                <p>
                   <a
                     href='https://www.udemy.com/course/complete-csharp-masterclass/'
                     rel='nofollow'
-                    className='text-gray-400 hover:underline'
+                    className='text-gray-400 hover:underline '
                   >
                     c#(udemy)
                   </a>
-                </li>
+                </p>
               </Accordion.Content>
             </Accordion.Panel>
           </Accordion>
