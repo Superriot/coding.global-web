@@ -66,11 +66,19 @@ export default function HomePage() {
               >
                 FAQ
               </UnstyledLink>
+            </div>
+            <div className='mt-4 flex items-center space-x-2'>
               <UnstyledLink
                 href='/rules'
                 className='cursor-newtab w-32 rounded-md bg-discord py-1 text-2xl font-black'
               >
                 Rules
+              </UnstyledLink>
+              <UnstyledLink
+                href='/team'
+                className='cursor-newtab w-32 rounded-md bg-discord py-1 text-2xl font-black'
+              >
+                Team
               </UnstyledLink>
             </div>
             <iframe

@@ -15,14 +15,15 @@ export default function Faq() {
 
       <main>
         <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 '>
-          <div className='flex items-center'>
+          <div className='flex items-center justify-between'>
             <Link href='/'>
               <button className='rounded bg-blue-500 font-bold hover:bg-blue-700'>
                 Home
               </button>
             </Link>
 
-            <h1 className='mb-2 text-center font-secondary text-white'>FAQs</h1>
+            <h1 className='text-center font-secondary text-white'>FAQs</h1>
+            <div></div>
           </div>
 
           <Accordion>

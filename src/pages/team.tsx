@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import Layout from '@/components/layout/Layout';
 
+import Header from '../components/elements/Header';
 import albo from '../../public/images/Team/albo.png';
 import anes from '../../public/images/Team/anes.png';
 import don from '../../public/images/Team/don.png';
@@ -60,15 +61,18 @@ export default function team() {
   return (
     <>
       <Layout>
-        <section className='layout mt-16 grid grid-cols-3 gap-4 rounded-md bg-dark-light bg-opacity-80 p-4 font-secondary text-white'>
-          {data.map(({ img, username }) => (
-            <div key={username} className=''>
-              <div className=' mx-auto mt-10 w-1/2 rounded-3xl border-4 p-4'>
-                <Image className='rounded-full' src={img} alt={username} />
+        <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 text-white'>
+          <Header name='Team' />
+          <div className='grid grid-cols-1 gap-0 md:grid-cols-4'>
+            {data.map(({ img, username }) => (
+              <div key={username} className='p-10'>
+                <div>
+                  <Image className='rounded-full' src={img} alt={username} />
+                </div>
                 <div className='text-center font-secondary'>{username}</div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </section>
       </Layout>
     </>
