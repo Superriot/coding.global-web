@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import Layout from '@/components/layout/Layout';
+import Seo from '@/components/Seo';
 
 import Header from '../components/elements/Header';
 import albo from '../../public/images/Team/albo.png';
@@ -60,6 +61,8 @@ const data = [
 export default function team() {
   return (
     <>
+      <Seo templateTitle='Team' description='Coding discord Team' />
+
       <Layout>
         <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 text-white'>
           <Header name='Team' />

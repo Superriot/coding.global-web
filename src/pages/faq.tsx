@@ -8,10 +8,7 @@ import Seo from '@/components/Seo';
 export default function Faq() {
   return (
     <Layout>
-      <Seo
-        templateTitle='Components'
-        description='Pre-built components with awesome default'
-      />
+      <Seo templateTitle='FAQ' description='Most Asked questions' />
 
       <main>
         <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 '>

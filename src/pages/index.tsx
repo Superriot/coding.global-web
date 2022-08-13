@@ -18,8 +18,10 @@ import Seo from '@/components/Seo';
 export default function HomePage() {
   return (
     <Layout>
-      {/* <Seo templateTitle='Home' /> */}
-      <Seo />
+      <Seo
+        templateTitle='Home'
+        description='discord.gg/coding official discord'
+      />
 
       <main>
         <section className='text-white'>
