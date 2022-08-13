@@ -1,4 +1,19 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+
+const plugin = require('tailwindcss/plugin');
+
+const Myclass = plugin(function ({ addUtilities }) {
+  addUtilities({
+    '.my-rotate-y-180': {
+      transform: 'rotateY(180deg)',
+    },
+    '.backface-hidden': {
+      backfaceVisibility: "hidden",
+      
+    },
+  });
+});
+
 const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
@@ -66,5 +81,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('flowbite/plugin')],
+  plugins: [require('@tailwindcss/forms'), require('flowbite/plugin'), Myclass],
 };
