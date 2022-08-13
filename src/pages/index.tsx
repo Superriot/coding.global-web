@@ -115,6 +115,10 @@ export default function HomePage() {
               <UnderlineLink href='https://github.com/Don-Cryptus'>
                 Don Cryptus
               </UnderlineLink>
+              {' & '}
+              <UnderlineLink href='https://github.com/Az-er'>
+                Az-er
+              </UnderlineLink>
             </footer>
           </div>
         </section>
