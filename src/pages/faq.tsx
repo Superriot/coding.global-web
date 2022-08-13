@@ -15,13 +15,16 @@ export default function Faq() {
 
       <main>
         <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 '>
-          <Link
-            className='rounded bg-blue-500  py-2 px-4 font-bold hover:bg-blue-700'
-            href='/'
-          >
-            <button className='absolute mt-auto'>Home</button>
-          </Link>
-          <h1 className='mb-2 text-center font-secondary text-white'>FAQs</h1>
+          <div className='flex items-center'>
+            <Link href='/'>
+              <button className='rounded bg-blue-500 font-bold hover:bg-blue-700'>
+                Home
+              </button>
+            </Link>
+
+            <h1 className='mb-2 text-center font-secondary text-white'>FAQs</h1>
+          </div>
+
           <Accordion>
             <Accordion.Panel>
               <Accordion.Title>Javascript/Typescript</Accordion.Title>
