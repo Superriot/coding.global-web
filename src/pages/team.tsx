@@ -1,9 +1,11 @@
+import Image from 'next/image';
+
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
 import Header from '../components/elements/Header';
 import albo from '../../public/images/Team/albo.png';
-import anes from '../../public/images/Team/anes.png';
+import anes from '../../public/images/Team/anes.ong.png';
 import don from '../../public/images/Team/don.png';
 import doniiboy from '../../public/images/Team/doniiboyJr.png';
 import en_Pilz from '../../public/images/Team/en_pilz.png';
@@ -15,54 +17,55 @@ import steffen from '../../public/images/Team/steffen.png';
 
 const data = [
   {
-    username: 'Don Diabolic',
-    img: don,
-    text: 'lansdfa',
-  },
-  {
     username: 'Paddy',
     img: paddy,
-    text: 'lansdfa',
+    text: 'Hallo Ich bin Paddy ich Arbeite viel und hab kaum Zeit was für den server zu machen',
+  },
+  {
+    username: 'Don Diabolic ',
+    img: don,
+    text: 'Hallo Ich bin Don ich bin der Owner dieses servers und kümmer mich um ..',
   },
   {
     username: 'en_Pilz',
     img: en_Pilz,
-    text: 'lansdfa',
+    text: 'Hallo Ich bin Pilz und bin kaum aktiv auf Discord, weil Discord ein verfluchter ort ist',
   },
   {
     username: 'albo',
     img: albo,
-    text: 'lansdfa',
+    text: 'Hallo Ich bin albo und bin fast nie da',
   },
-  {
-    username: 'Anes',
-    img: anes,
-    text: 'lansdfa',
-  },
+
   {
     username: 'DoniiBoyJr',
     img: doniiboy,
-    text: 'lansdfa',
+    text: 'Hey, Ich bin Azer und bin Moderator ich kümmere mich um diese website',
   },
   {
     username: 'Jiren',
     img: jiren,
-    text: 'lansdfa',
+    text: 'Hey ich bin Jiren und ich mach nix für den server',
   },
   {
     username: 'Martin',
     img: martin,
-    text: 'lansdfa',
+    text: 'Hey ich bin martin und bin moderator ich passe auf das niemand Scheiße in den chats schreibt',
   },
   {
     username: 'Matze',
     img: matze,
-    text: 'lansdfa',
+    text: 'Hallo ich bin Matze und helfe wen jemand hilfe braucht',
   },
   {
     username: 'Steffen',
     img: steffen,
-    text: 'lansdfa',
+    text: 'Heyy Ich bin Steffen und Helfe Sehr oft und gerne!',
+  },
+  {
+    username: 'Anes',
+    img: anes,
+    text: 'Hey ich bin Anes und habe keine ahnung was ich hier machen soll',
   },
 ];
 
@@ -74,16 +77,24 @@ export default function team() {
       <Layout>
         <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 text-white'>
           <Header name='Team' />
-          iterm my nae
-          <div className='grid grid-cols-1 gap-0 md:grid-cols-4'>
-            {data.map(({ username }) => (
-              <div key={username} className='p-10'>
-                <div className='perspective group h-[420px] w-[300px]'>
-                  <div className='preserve-3d relative h-full w-full duration-1000 group-hover:my-rotate-y-180'>
-                    <div className='absolute h-full w-full border-2 backface-hidden'></div>
-                    <div className='absolute h-full w-full overflow-hidden bg-gray-100 my-rotate-y-180 backface-hidden'></div>
+          <div className='mt-10 grid grid-cols-3 justify-evenly'>
+            {data.map(({ username, img, text }) => (
+              <div key={username} className='mt-10 flex flex-col items-center'>
+                <div className='group h-[200px] w-[200px] rounded-full perspective'>
+                  <div className='relative duration-1000 preserve-3d group-hover:my-rotate-y-180'>
+                    <div className='absolute backface-hidden'>
+                      <Image
+                        src={img}
+                        className='rounded-full'
+                        alt={username}
+                      />
+                    </div>
+                    <div className='flex h-full w-full items-center justify-center bg-black p-4 text-xs text-white my-rotate-y-180 backface-hidden '>
+                      {text}
+                    </div>
                   </div>
                 </div>
+                {username}
               </div>
             ))}
           </div>
