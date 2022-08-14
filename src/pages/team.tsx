@@ -19,53 +19,53 @@ const data = [
   {
     username: 'Paddy',
     img: paddy,
-    text: 'Hallo Ich bin Paddy ich Arbeite viel und hab kaum Zeit was für den server zu machen',
+    text: 'Hello I am Paddy I work a lot and have little time to do what for the server',
   },
   {
     username: 'Don Diabolic ',
     img: don,
-    text: 'Hallo Ich bin Don ich bin der Owner dieses servers und kümmer mich um ..',
+    text: 'Hi Im Don Im the owner of this server and I take care of',
   },
   {
     username: 'en_Pilz',
     img: en_Pilz,
-    text: 'Hallo Ich bin Pilz und bin kaum aktiv auf Discord, weil Discord ein verfluchter ort ist',
+    text: 'Hi Im pilz and Im hardly active on Discord because Discord is a cursed place',
   },
   {
     username: 'albo',
     img: albo,
-    text: 'Hallo Ich bin albo und bin fast nie da',
+    text: 'Hello I am albo and am almost never therea',
   },
 
   {
     username: 'DoniiBoyJr',
     img: doniiboy,
-    text: 'Hey, Ich bin Azer und bin Moderator ich kümmere mich um diese website',
+    text: 'Hey, I am Azer and I am moderator I take care of this website',
   },
   {
     username: 'Jiren',
     img: jiren,
-    text: 'Hey ich bin Jiren und ich mach nix für den server',
+    text: 'Hey I am Jiren and I do nothing for the server',
   },
   {
     username: 'Martin',
     img: martin,
-    text: 'Hey ich bin martin und bin moderator ich passe auf das niemand Scheiße in den chats schreibt',
+    text: 'Hey Im martin and Im a moderator I make sure no one writes shit in the chats',
   },
   {
     username: 'Matze',
     img: matze,
-    text: 'Hallo ich bin Matze und helfe wen jemand hilfe braucht',
+    text: 'Hello I am Matze and help who someone needs help',
   },
   {
     username: 'Steffen',
     img: steffen,
-    text: 'Heyy Ich bin Steffen und Helfe Sehr oft und gerne!',
+    text: 'Heyy I am Steffen and help very often and with pleasure!',
   },
   {
     username: 'Anes',
     img: anes,
-    text: 'Hey ich bin Anes und habe keine ahnung was ich hier machen soll',
+    text: 'Hey I am Anes and have no idea what to do here',
   },
 ];
 

@@ -5,7 +5,8 @@ import Sidebar from '@/components/layout/Sidebar';
 const Bot: React.FC = () => {
   return (
     <Sidebar>
-      <div>asd</div>
+      <div className='mt-10 text-white'>asd</div>
+      <div>öamdföamsdnf</div>
     </Sidebar>
   );
 };
