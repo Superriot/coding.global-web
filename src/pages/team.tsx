@@ -80,7 +80,7 @@ export default function team() {
           <div className='mt-10 grid grid-cols-3 justify-evenly'>
             {data.map(({ username, img, text }) => (
               <div key={username} className='mt-10 flex flex-col items-center'>
-                <div className='group h-[200px] w-[200px] rounded-full perspective'>
+                <div className='group h-[150px] w-[150px] rounded-full bg-black text-xs text-white perspective'>
                   <div className='relative duration-1000 preserve-3d group-hover:my-rotate-y-180'>
                     <div className='absolute backface-hidden'>
                       <Image
@@ -89,7 +89,7 @@ export default function team() {
                         alt={username}
                       />
                     </div>
-                    <div className='flex h-full w-full items-center justify-center bg-black p-4 text-xs text-white my-rotate-y-180 backface-hidden '>
+                    <div className='flex h-[150px] items-center justify-center rounded-full px-4 my-rotate-y-180 backface-hidden'>
                       {text}
                     </div>
                   </div>
