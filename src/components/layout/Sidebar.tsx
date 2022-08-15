@@ -216,10 +216,10 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
       </div>
 
       <main className='flex-1'>
-        <div className='relative z-0'>
+        <div className='relative'>
           <img src={gif.src} className='w-full' alt='sdfasd' />
           <div className='absolute top-0 right-0 font-sans text-4xl text-white'>
-            Bots
+            <div className='text-white underline'>Bots</div>
           </div>
         </div>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8'>
