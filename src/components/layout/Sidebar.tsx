@@ -7,7 +7,6 @@ import {
   UsersIcon,
   XIcon,
 } from '@heroicons/react/outline';
-import Image from 'next/image';
 import { Fragment, useState } from 'react';
 
 import gif from '../../../public/images/Banner/pp.png';
@@ -131,9 +130,9 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
           </Dialog>
         </Transition.Root>
         {/* Static sidebar for desktop */}
-        <div className='hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col'>
+        <div className='relative z-50 hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col'>
           {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className='flex min-h-0 flex-1 flex-col bg-gray-800'>
+          <div className=' flex min-h-0 flex-1 flex-col bg-gray-800'>
             <div className='flex h-16 flex-shrink-0 items-center bg-gray-900 px-4'>
               <img
                 className='h-8 w-auto'
@@ -170,17 +169,7 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </div>
-        <div className='flex flex-col md:pl-64'>
-          <div className='relative'>
-            <Image src={gif} objectFit='cover' alt='sdfasd' />
-            <div className='absolute top-20 ml-40 font-sans text-4xl '>
-              <div className='flex items-center justify-center text-white underline'>
-                Bots
-                <div className='mt'></div>
-              </div>
-            </div>
-          </div>
-        </div>{' '}
+
         <button
           type='button'
           className='border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden'
@@ -227,8 +216,13 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
       </div>
 
       <main className='flex-1'>
-        <div className='py-6'>
-          <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8'></div>
+        <div className='relative z-0'>
+          <img src={gif.src} className='w-full' alt='sdfasd' />
+          <div className='absolute top-0 right-0 font-sans text-4xl text-white'>
+            Bots
+          </div>
+        </div>
+        <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8'>
           <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8'>
             {children}
           </div>
