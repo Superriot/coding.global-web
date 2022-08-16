@@ -1,21 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
+
 import { Dialog, Menu, Transition } from '@headlessui/react';
-import {
-  ChartBarIcon,
-  HomeIcon,
-  MenuAlt2Icon,
-  UsersIcon,
-  XIcon,
-} from '@heroicons/react/outline';
+import { MenuAlt2Icon, XIcon } from '@heroicons/react/outline';
 import { Fragment, useState } from 'react';
+import { FaHome } from 'react-icons/fa';
+import { FcRules } from 'react-icons/fc';
+import { FcFaq } from 'react-icons/fc';
+import { RiTeamFill } from 'react-icons/Ri';
 
 import gif from '../../../public/images/Banner/pp.png';
 
 const navigation = [
-  { name: 'Home', href: '/', icon: HomeIcon, current: true },
-  { name: 'Team', href: '/team', icon: UsersIcon, current: false },
-  { name: 'rules', href: '/rules', icon: ChartBarIcon, current: false },
-  { name: 'faq', href: '/faq', icon: ChartBarIcon, current: false },
+  { name: 'Home', href: '/', icon: FaHome, current: true },
+  { name: 'Team', href: '/team', icon: RiTeamFill, current: false },
+  { name: 'rules', href: '/rules', icon: FcRules, current: false },
+  { name: 'faq', href: '/faq', icon: FcFaq, current: false },
 ];
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
@@ -216,17 +215,15 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
       </div>
 
       <main className='flex-1'>
-        <div className='relative'>
-          <img src={gif.src} className='w-full' alt='sdfasd' />
-          <div className='absolute top-0 right-0 font-sans text-4xl text-white'>
-            <div className='text-white underline'>Bots</div>
+        <div className='relative '>
+          <img src={gif.src} className='h-72 w-full' alt='sdfasd' />
+          <div className='absolute top-0 left-0 ml-20 h-full w-full text-6xl text-white underline'>
+            <div className='mx-auto flex h-full max-w-7xl items-center sm:px-6 md:px-8'>
+              Bots
+            </div>
           </div>
         </div>
-        <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8'>
-          <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8'>
-            {children}
-          </div>
-        </div>
+        <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8'>{children}</div>
       </main>
     </>
   );

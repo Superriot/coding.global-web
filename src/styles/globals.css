@@ -179,7 +179,7 @@ input::-webkit-inner-spin-button {
 
 /* Active */
 button[class*='text-gray-900'] {
-  @apply bg-white text-black !important;
+  @apply bg-black text-white !important;
 }
 
 /* Not Active */
