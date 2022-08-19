@@ -178,11 +178,11 @@ input::-webkit-inner-spin-button {
 }
 
 /* Active */
-button[class*='text-gray-900'] {
+div[data-testid*='flowbite-accordion'] button[class*='text-gray-900'] {
   @apply bg-black text-white !important;
 }
 
 /* Not Active */
-button:not([class*='text-gray-900']) {
+div[data-testid*='flowbite-accordion'] button:not([class*='text-gray-900']) {
   @apply bg-transparent text-white  hover:bg-white hover:text-black !important;
 }
