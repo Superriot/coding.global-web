@@ -17,7 +17,9 @@
     "release": "standard-version",
     "push-release": "git push --follow-tags origin main",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "bug:check": "yarn lint:strict && yarn format:check && yarn test && yarn typecheck",
+    "bug:fix": "yarn lint:fix && yarn format"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
