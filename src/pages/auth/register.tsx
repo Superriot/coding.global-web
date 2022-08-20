@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 import Link from 'next/link';
 import React, { FormEvent, useState } from 'react';
@@ -15,21 +16,15 @@ export default function Register() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      alert('Password is not compare');
-      return;
+      return alert('Password is not compare');
     }
 
-    try {
-      const data = await axios.post('/api/newUser', {
-        email,
-        password,
-        confirmPassword,
-      });
-      data;
-      // console.log(data);
-    } catch (err) {
-      // console.log(err);
-    }
+    const res = await axios.post('/api/newUser', {
+      email,
+      password,
+      confirmPassword,
+    });
+    console.log(res.data);
   };
 
   return (

@@ -1,14 +1,31 @@
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import fs from 'fs';
+
+type User = { email: string; password: string; confirmPassword: string };
+
 function handler(req: any, res: any) {
   if (req.method === 'POST') {
-    const data = req.body;
-    console.log(data);
+    const data = req.body as User;
 
-    const { email, password, confirmPassword } = data;
+    let users: User[] | undefined;
 
-    res.status(201).json({ data });
+    if (fs.existsSync('user.json')) {
+      users = JSON.parse(fs.readFileSync('user.json', 'utf-8')) as User[];
+    }
+
+    if (!users) {
+      fs.writeFileSync('user.json', JSON.stringify([data]));
+      return res.status(200).json(data);
+    }
+    console.log(users);
+
+    const user = users?.find((user) => user.email === data.email);
+
+    if (user) {
+      return res.status(200).json({ error: 'user already exists' });
+    }
   }
 }
 
