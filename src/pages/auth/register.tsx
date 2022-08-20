@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 
 import Input from '@/components/auth/Input';
 import Layout from '@/components/layout/Layout';
@@ -11,11 +11,12 @@ export default function Register() {
   const [password, setPassword] = useState('don123');
   const [confirmPassword, setConfirmedPassword] = useState('don123');
 
-  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
       alert('Password is not compare');
+      return;
     }
 
     try {
