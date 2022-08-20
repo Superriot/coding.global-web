@@ -21,10 +21,13 @@ function handler(req: any, res: any) {
     }
     console.log(users);
 
-    const user = users?.find((user) => user.email === data.email);
+    const user = users.find((user) => user.email === data.email);
 
     if (user) {
       return res.status(200).json({ error: 'user already exists' });
+    } else {
+      fs.writeFileSync('user.json', JSON.stringify([...users, data]));
+      return res.status(200).json(data);
     }
   }
 }
