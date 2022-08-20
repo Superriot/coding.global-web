@@ -1,10 +1,12 @@
+/* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 function handler(req: any, res: any) {
   if (req.method === 'POST') {
     const data = req.body;
-    // console.log(data)
+    console.log(data);
 
-    // const { email, password, confirmPassword } = data;
+    const { email, password, confirmPassword } = data;
 
     res.status(201).json({ data });
   }

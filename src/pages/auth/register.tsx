@@ -11,7 +11,9 @@ export default function Register() {
   const [password, setPassword] = useState('don123');
   const [confirmPassword, setConfirmedPassword] = useState('don123');
 
-  const onClickHandler = async () => {
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     if (password !== confirmPassword) {
       alert('Password is not compare');
     }
@@ -25,14 +27,9 @@ export default function Register() {
       data;
       // console.log(data);
     } catch (err) {
-      //handler here
       // console.log(err);
     }
   };
-
-  // console.log(email);
-  // console.log(password);
-  // console.log(confirmPassword);
 
   return (
     <Layout>
@@ -46,7 +43,7 @@ export default function Register() {
               <div>
                 <h2>Create an account</h2>
               </div>
-              <form>
+              <form onSubmit={submit}>
                 <Input
                   name='Email'
                   type='email'
@@ -87,7 +84,6 @@ export default function Register() {
                 <button
                   type='submit'
                   className='mt-1 w-full rounded bg-blue-500 py-2 text-center text-white hover:bg-blue-900'
-                  onClick={onClickHandler}
                 >
                   Register
                 </button>
