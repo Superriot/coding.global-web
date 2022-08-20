@@ -1,30 +1,34 @@
-// import axios from 'axios';
+import axios from 'axios';
 import Link from 'next/link';
+import React, { useState } from 'react';
 
-// import React, { useState } from 'react';
-// import Input from '@/components/auth/Input';
+import Input from '@/components/auth/Input';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
 export default function Register() {
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [confirmPassword, setConfirmedPassword] = useState('');
+  const [email, setEmail] = useState('don@don.com');
+  const [password, setPassword] = useState('don123');
+  const [confirmPassword, setConfirmedPassword] = useState('don123');
 
-  // const onClickHandler = () => {
-  //   const data = axios
-  //     .post('/newUser', {
-  //       email,
-  //       password,
-  //       confirmPassword,
-  //     })
-  //     .then(function (response) {
-  //       console.log(response);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // };
+  const onClickHandler = async () => {
+    if (password !== confirmPassword) {
+      alert('Password is not compare');
+    }
+
+    try {
+      const data = await axios.post('/api/newUser', {
+        email,
+        password,
+        confirmPassword,
+      });
+      data;
+      // console.log(data);
+    } catch (err) {
+      //handler here
+      // console.log(err);
+    }
+  };
 
   // console.log(email);
   // console.log(password);
@@ -43,7 +47,7 @@ export default function Register() {
                 <h2>Create an account</h2>
               </div>
               <form>
-                {/* <Input
+                <Input
                   name='Email'
                   type='email'
                   value={email}
@@ -60,7 +64,7 @@ export default function Register() {
                   type='password'
                   value={confirmPassword}
                   onChange={setConfirmedPassword}
-                /> */}
+                />
 
                 <div className='mb-4 mt-5 flex items-center'>
                   <input
@@ -83,7 +87,7 @@ export default function Register() {
                 <button
                   type='submit'
                   className='mt-1 w-full rounded bg-blue-500 py-2 text-center text-white hover:bg-blue-900'
-                  // onClick={onClickHandler}
+                  onClick={onClickHandler}
                 >
                   Register
                 </button>
