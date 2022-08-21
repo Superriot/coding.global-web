@@ -1,13 +1,1 @@
-[
-  { "email": "don@don.com", "password": "don123", "confirmPassword": "don123" },
-  {
-    "email": "don@doasdn.com",
-    "password": "don123",
-    "confirmPassword": "don123"
-  },
-  {
-    "email": "don@doasasfdn.com",
-    "password": "dondon123",
-    "confirmPassword": "dondon123"
-  }
-]
+[{"email":"don123@don.com","password":"don123","confirmPassword":"don123"}]
