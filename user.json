@@ -1,1 +1,20 @@
-[{"email":"don123@don.com","password":"don123","confirmPassword":"don123"}]
+[
+  { "email": "don@don.com", "password": "don123", "confirmPassword": "don123" },
+  { "email": "don@don.com", "password": "don123", "confirmPassword": "don123" },
+  { "email": "don@don.com", "password": "don123", "confirmPassword": "don123" },
+  {
+    "email": "don123@don.com",
+    "password": "don123",
+    "confirmPassword": "don123"
+  },
+  {
+    "email": "don12212312321123@don.com",
+    "password": "don123",
+    "confirmPassword": "don123"
+  },
+  {
+    "email": "don1221231231231234123412321123@don.com",
+    "password": "don123",
+    "confirmPassword": "don123"
+  }
+]

@@ -24,6 +24,7 @@ export default function Register() {
       password,
       confirmPassword,
     });
+
     console.log(res.data);
   };
 
