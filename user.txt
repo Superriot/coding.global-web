@@ -9,3 +9,9 @@
 5.1 return res.status() user already exist 
 5.2 wen der user nicht existiert wird der user in der json datei erstellt + die user die schon drin waren 
 
+
+
+1. Überprüfen ob die datei existiert
+1.1 wen sie nicht existiert return res.status 
+1.2 wen sie existier mit find daten(email, password) suchen 
+2. richtig oder falsch 

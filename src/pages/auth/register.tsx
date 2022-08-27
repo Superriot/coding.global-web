@@ -7,10 +7,14 @@ import Input from '@/components/auth/Input';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
+import Alert from '../../components/elements/Alert';
+
 export default function Register() {
   const [email, setEmail] = useState('don@don.com');
   const [password, setPassword] = useState('don123');
   const [confirmPassword, setConfirmedPassword] = useState('don123');
+  const [color, setColor] = useState('');
+  const [alert1, setAlert] = useState('');
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -19,11 +23,19 @@ export default function Register() {
       return alert('Password is not compare');
     }
 
-    const res = await axios.post('/api/newUser', {
+    const res = await axios.post('/api/register', {
       email,
       password,
       confirmPassword,
     });
+
+    if (res.data.email) {
+      setColor('text-green bg-green-100');
+      setAlert('Created new User');
+    } else {
+      setColor('p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg ');
+      setAlert(res.data.message);
+    }
 
     console.log(res.data);
   };
@@ -59,25 +71,8 @@ export default function Register() {
                   value={confirmPassword}
                   onChange={setConfirmedPassword}
                 />
+                {alert1 && <Alert title={alert1} color={color} />}
 
-                <div className='mb-4 mt-5 flex items-center'>
-                  <input
-                    id='default-checkbox'
-                    type='checkbox'
-                    className='mt-1 h-4 w-4 rounded border-gray-300 bg-gray-100  dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 '
-                  />
-                  <label
-                    htmlFor='default-checkbox'
-                    className='ml-2 text-base font-medium text-white dark:text-gray-300'
-                  >
-                    <div className='mt-1'>
-                      I accept the{' '}
-                      <code className='text-blue-500 hover:text-blue-700'>
-                        <Link href='/rules'>Terms and Conditions</Link>
-                      </code>
-                    </div>
-                  </label>
-                </div>
                 <button
                   type='submit'
                   className='mt-1 w-full rounded bg-blue-500 py-2 text-center text-white hover:bg-blue-900'

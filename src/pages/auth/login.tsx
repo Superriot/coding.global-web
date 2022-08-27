@@ -1,9 +1,40 @@
+import axios from 'axios';
+import { FormEvent, useState } from 'react';
+
+import Input from '@/components/auth/Input';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
 import SubmitButton from '../../components/auth/SubmitButton';
+import Alert from '../../components/elements/Alert';
 
-const register = () => {
+export default function Login() {
+  const [email, setEmail] = useState('don@don.com');
+  const [password, setPassword] = useState('don123');
+  const [alert, setAlert] = useState('');
+  const [color, setColor] = useState('');
+
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const res = await axios.post('/api/login', {
+      email,
+      password,
+    });
+
+    if (res.data.email) {
+      setColor('text-green bg-green-100');
+      setAlert('Loged in');
+    } else {
+      setColor(
+        'p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800'
+      );
+      setAlert(res.data.message);
+    }
+
+    localStorage.setItem('list', JSON.stringify({ email }));
+  };
+
   return (
     <Layout>
       <div
@@ -13,7 +44,7 @@ const register = () => {
           <Seo templateTitle='Rules' description='Discord Server Rules' />
           <main>
             <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 '>
-              <h2 className='text-black'>Log in</h2>
+              <h2 className='text-white'>Log in</h2>
               <p className='mt-2'>
                 Or{' '}
                 <code className='text-blue-500'>
@@ -31,64 +62,32 @@ const register = () => {
                   </p>
                 </div>
               </div>
-              <div className='mt-3'>
-                <label
-                  htmlFor='exampleEmail0'
-                  className='form-label mb-2 inline-block text-gray-700'
-                />
-                Email address
-                <input
+              <form onSubmit={submit}>
+                <Input
+                  name='Email'
                   type='email'
-                  className='
-        w-full
-        rounded-md
-       
-      '
-                  id='exampleEmail0'
-                  placeholder='Email input'
+                  value={email}
+                  onChange={setEmail}
                 />
-              </div>
-              <div className='mt-5'>
-                {' '}
-                <label
-                  htmlFor='examplePassword0'
-                  className='mb-2 inline-block text-gray-700'
+                <Input
+                  name='Password'
+                  type='password'
+                  value={password}
+                  onChange={setPassword}
                 />
-                password
-                <input
-                  type='email'
-                  className='
-        w-full
-        rounded-md
-
-      '
-                  id='exampleEmail0'
-                  placeholder='password'
-                />
-              </div>
-              <div className='mb-4 mt-5 flex items-center'>
-                <input
-                  id='default-checkbox'
-                  type='checkbox'
-                  value=''
-                  className='h-4 w-4 rounded border-gray-300 bg-gray-100   dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 '
-                />
-                <label
-                  htmlFor='default-checkbox'
-                  className='ml-2 text-base font-medium text-white dark:text-gray-300'
+                <div className='mb-0 mt-0 flex items-center'></div>
+                {alert && <Alert title={alert} color={color} />}
+                <button
+                  type='submit'
+                  className='mt-1 w-full rounded bg-blue-500 py-2 text-center text-white hover:bg-blue-900'
                 >
-                  Remember me
-                </label>
-              </div>
-              <div className='mt-5 w-full rounded bg-blue-500 py-2 text-center text-white hover:bg-blue-900'>
-                Sign in
-              </div>
+                  sign in
+                </button>
+              </form>
             </section>
           </main>
         </div>
       </div>
     </Layout>
   );
-};
-
-export default register;
+}
