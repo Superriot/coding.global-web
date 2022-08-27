@@ -1,4 +1,23 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/*
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+      require('@tailwindcss/aspect-ratio'),
+    ],
+  }
+  ```
+*/
 import { Dialog, Menu, Transition } from '@headlessui/react';
 import {
   Bars4Icon,
@@ -19,7 +38,6 @@ import {
   UserGroupIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
-import Image from 'next/image';
 import { Fragment, useState } from 'react';
 
 const navigation = [
@@ -99,7 +117,7 @@ export default function Example() {
         <div className='hidden w-28 overflow-y-auto bg-indigo-700 md:block'>
           <div className='flex w-full flex-col items-center py-6'>
             <div className='flex flex-shrink-0 items-center'>
-              <Image
+              <img
                 className='h-8 w-auto'
                 src='https://tailwindui.com/img/logos/workflow-mark.svg?color=white'
                 alt='Workflow'
@@ -188,7 +206,7 @@ export default function Example() {
                     </div>
                   </Transition.Child>
                   <div className='flex flex-shrink-0 items-center px-4'>
-                    <Image
+                    <img
                       className='h-8 w-auto'
                       src='https://tailwindui.com/img/logos/workflow-mark.svg?color=white'
                       alt='Workflow'
@@ -284,7 +302,7 @@ export default function Example() {
                     <div>
                       <Menu.Button className='flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
                         <span className='sr-only'>Open user menu</span>
-                        <Image
+                        <img
                           className='h-8 w-8 rounded-full'
                           src='https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80'
                           alt=''
@@ -446,7 +464,7 @@ export default function Example() {
                             'aspect-w-10 aspect-h-7 group block w-full overflow-hidden rounded-lg bg-gray-100'
                           )}
                         >
-                          <Image
+                          <img
                             src={file.source}
                             alt=''
                             className={classNames(
@@ -481,7 +499,7 @@ export default function Example() {
               <div className='space-y-6 pb-16'>
                 <div>
                   <div className='aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg'>
-                    <Image
+                    <img
                       src={currentFile.source}
                       alt=''
                       className='object-cover'
@@ -515,6 +533,10 @@ export default function Example() {
                         className='flex justify-between py-3 text-sm font-medium'
                       >
                         <dt className='text-gray-500'>{key}</dt>
+                        <dd className='whitespace-nowrap text-gray-900'>
+                          {/* @ts-ignore */}
+                          {currentFile.information[key]}
+                        </dd>
                       </div>
                     ))}
                   </dl>
@@ -546,7 +568,7 @@ export default function Example() {
                         className='flex items-center justify-between py-3'
                       >
                         <div className='flex items-center'>
-                          <Image
+                          <img
                             src={person.imageUrl}
                             alt=''
                             className='h-8 w-8 rounded-full'
