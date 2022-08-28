@@ -20,7 +20,7 @@ export default function Login() {
   useEffect(() => {
     const loggedInUser = localStorage.getItem('auth');
     if (loggedInUser) {
-      router.push('auth/dashboard');
+      router.push('/auth/dashboard');
     }
   }, [router]);
 

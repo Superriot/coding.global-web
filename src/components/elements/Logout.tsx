@@ -1,19 +1,20 @@
-/* eslint-disable no-console */
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-const logOutClick = () => {
-  localStorage.removeItem('auth');
-  console.log('ausgeloggt');
-};
+const Logout = () => {
+  const router = useRouter();
 
-const logout = () => {
+  const logOutClick = () => {
+    localStorage.removeItem('auth');
+    router.push('/auth/login');
+  };
+
   return (
-    <div className='mt-5 ml-[] '>
-      <button className='hover:underline ' onClick={logOutClick}>
-        <Link href='./login'>Logout</Link>
+    <div className='mt-5'>
+      <button className='cursor-pointer hover:underline' onClick={logOutClick}>
+        Logout
       </button>
     </div>
   );
 };
 
-export default logout;
+export default Logout;

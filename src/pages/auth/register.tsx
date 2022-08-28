@@ -22,7 +22,7 @@ export default function Register() {
   useEffect(() => {
     const loggedInUser = localStorage.getItem('auth');
     if (loggedInUser) {
-      router.push('auth/dashboard');
+      router.push('/auth/dashboard');
     }
   }, [router]);
 

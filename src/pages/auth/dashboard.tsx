@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-console */
 /* eslint-disable unused-imports/no-unused-vars */
@@ -14,7 +15,8 @@ import {
   Squares2X2Icon as Squares2X2IconMini,
 } from '@heroicons/react/20/solid';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { createApi } from 'unsplash-js';
 
 import DashboardSidebar from '@/components/elements/DashboardSidebar';
 
@@ -31,17 +33,46 @@ const files = [
   // More files...
 ];
 
+const unsplash = createApi({
+  accessKey: 'NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s',
+});
+
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function dashboard() {
   const router = useRouter();
+  const [phrase, setPhrase] = useState('');
+  const [images, setImages] = useState([]);
+
+  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
+  function getUnsplashImages(query: any, page: number = 1) {
+    return new Promise((resolve, reject) => {
+      unsplash.search
+        .getPhotos({
+          query,
+          page,
+          perPage: 5,
+        })
+        .then((result) => {
+          resolve(
+            result.response?.results.map((result) => result.urls.regular)
+          );
+        });
+    });
+  }
+
+  useEffect(() => {
+    if (phrase !== '') {
+      getUnsplashImages(phrase);
+    }
+  }, [phrase]);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('auth');
     if (!loggedInUser) {
-      router.push('auth/login');
+      router.push('/auth/login');
     }
   }, [router]);
 
@@ -74,6 +105,7 @@ export default function dashboard() {
                         />
                       </div>
                     </div>
+                    <div></div>
 
                     <input
                       name='mobile-search-field'
@@ -81,14 +113,21 @@ export default function dashboard() {
                       className='h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:border-transparent focus:placeholder-gray-400 focus:outline-none focus:ring-0 sm:hidden'
                       placeholder='Search'
                       type='search'
+                      value={phrase}
+                      onChange={(e) => setPhrase(e.target.value)}
                     />
+
                     <input
                       name='desktop-search-field'
                       id='desktop-search-field'
                       className='hidden h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:border-transparent focus:placeholder-gray-400 focus:outline-none focus:ring-0 sm:block'
                       placeholder='Search all files'
                       type='search'
+                      value={phrase}
+                      onChange={(e) => setPhrase(e.target.value)}
                     />
+                    {images.length > 0 &&
+                      images.map((url) => <img src={url} key={url} />)}
                   </div>
                 </form>
               </div>
