@@ -1,5 +1,7 @@
 import axios from 'axios';
-import { FormEvent, useState } from 'react';
+import { useRouter } from 'next/router';
+import { FormEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 import Input from '@/components/auth/Input';
 import Layout from '@/components/layout/Layout';
@@ -13,6 +15,14 @@ export default function Login() {
   const [password, setPassword] = useState('don123');
   const [alert, setAlert] = useState('');
   const [color, setColor] = useState('');
+  const router = useRouter();
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('auth');
+    if (loggedInUser) {
+      router.push('auth/dashboard');
+    }
+  }, [router]);
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,16 +33,16 @@ export default function Login() {
     });
 
     if (res.data.email) {
-      setColor('text-green bg-green-100');
+      setColor('text-green bg-green-100  ');
       setAlert('Loged in');
+      localStorage.setItem('auth', JSON.stringify({ email }));
+      router.push('./dashboard');
     } else {
       setColor(
         'p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800'
       );
       setAlert(res.data.message);
     }
-
-    localStorage.setItem('list', JSON.stringify({ email }));
   };
 
   return (
@@ -44,24 +54,10 @@ export default function Login() {
           <Seo templateTitle='Rules' description='Discord Server Rules' />
           <main>
             <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 '>
-              <h2 className='text-white'>Log in</h2>
-              <p className='mt-2'>
-                Or{' '}
-                <code className='text-blue-500'>
-                  start your 14-day free trial
-                </code>
-              </p>
-              <p className='mt-5'>Sign in with</p>
               <div>
-                <SubmitButton />
+                <SubmitButton title='Login' />
               </div>
-              <div className='relative mt-10'>
-                <div className='my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-gray-300 after:mt-0.5 after:flex-1 after:border-t after:border-gray-300'>
-                  <p className='m-auto mx-4 mb-0 text-center font-semibold'>
-                    OR
-                  </p>
-                </div>
-              </div>
+
               <form onSubmit={submit}>
                 <Input
                   name='Email'
@@ -75,13 +71,14 @@ export default function Login() {
                   value={password}
                   onChange={setPassword}
                 />
-                <div className='mb-0 mt-0 flex items-center'></div>
+
                 {alert && <Alert title={alert} color={color} />}
+
                 <button
                   type='submit'
-                  className='mt-1 w-full rounded bg-blue-500 py-2 text-center text-white hover:bg-blue-900'
+                  className='mt-4 w-full rounded bg-blue-500 py-2 text-center text-white hover:bg-blue-900'
                 >
-                  sign in
+                  Login
                 </button>
               </form>
             </section>

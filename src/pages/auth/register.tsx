@@ -1,9 +1,11 @@
 /* eslint-disable no-console */
 import axios from 'axios';
 import Link from 'next/link';
-import React, { FormEvent, useState } from 'react';
+import { useRouter } from 'next/router';
+import React, { FormEvent, useEffect, useState } from 'react';
 
 import Input from '@/components/auth/Input';
+import SubmitButton from '@/components/auth/SubmitButton';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
@@ -15,6 +17,14 @@ export default function Register() {
   const [confirmPassword, setConfirmedPassword] = useState('don123');
   const [color, setColor] = useState('');
   const [alert1, setAlert] = useState('');
+  const router = useRouter();
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('auth');
+    if (loggedInUser) {
+      router.push('auth/dashboard');
+    }
+  }, [router]);
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -50,7 +60,7 @@ export default function Register() {
           <main>
             <section className='layout my-10 rounded-md bg-dark-light bg-opacity-80 p-10 '>
               <div>
-                <h2>Create an account</h2>
+                <SubmitButton title='Register' />
               </div>
               <form onSubmit={submit}>
                 <Input
@@ -75,7 +85,8 @@ export default function Register() {
 
                 <button
                   type='submit'
-                  className='mt-1 w-full rounded bg-blue-500 py-2 text-center text-white hover:bg-blue-900'
+                  className='mt-3 w-full rounded bg-blue-500 py-2 text-center text-white hover:bg-blue-900'
+                  value='submit'
                 >
                   Register
                 </button>
