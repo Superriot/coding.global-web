@@ -14,7 +14,7 @@ import {
   Squares2X2Icon as Squares2X2IconMini,
 } from '@heroicons/react/20/solid';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import DashboardSidebar from '@/components/elements/DashboardSidebar';
 
@@ -36,17 +36,12 @@ function classNames(...classes: string[]) {
 }
 
 export default function dashboard() {
-  const [loggedInUser, setUser] = useState();
   const router = useRouter();
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('auth');
-    if (loggedInUser) {
-      console.log('is logged in');
-      const foundUser = JSON.parse(loggedInUser);
-      setUser(foundUser);
-    } else {
-      router.push('./login');
+    if (!loggedInUser) {
+      router.push('auth/login');
     }
   }, [router]);
 
