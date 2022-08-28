@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { Dialog, Menu, Transition } from '@headlessui/react';
-import { MenuAlt2Icon, XIcon } from '@heroicons/react/outline';
 import { Fragment, useState } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { FcRules } from 'react-icons/fc';
 import { FcFaq } from 'react-icons/fc';
-import { RiTeamFill } from 'react-icons/Ri';
+import { RiTeamFill } from 'react-icons/ri';
 
 import gif from '../../../public/images/Banner/pp.png';
 
@@ -85,10 +84,10 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
                         onClick={() => setSidebarOpen(false)}
                       >
                         <span className='sr-only'>Close sidebar</span>
-                        <XIcon
+                        {/* <XIcon
                           className='h-6 w-6 text-white'
                           aria-hidden='true'
-                        />
+                        /> */}
                       </button>
                     </div>
                   </Transition.Child>
@@ -175,7 +174,7 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
           onClick={() => setSidebarOpen(true)}
         >
           <span className='sr-only'>Open sidebar</span>
-          <MenuAlt2Icon className='h-6 w-6' aria-hidden='true' />
+          {/* <MenuAlt2Icon className='h-6 w-6' aria-hidden='true' /> */}
         </button>
         {/* Profile dropdown */}
         <Menu as='div' className='relative ml-3'>
