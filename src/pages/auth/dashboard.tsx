@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-console */
@@ -14,13 +15,15 @@ import {
   MagnifyingGlassIcon,
   Squares2X2Icon as Squares2X2IconMini,
 } from '@heroicons/react/20/solid';
+import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { createApi } from 'unsplash-js';
 
 import DashboardSidebar from '@/components/elements/DashboardSidebar';
 
 import Logout from '../../components/elements/Logout';
+
+import { UnsplashResult } from '@/types';
 
 const files = [
   {
@@ -33,41 +36,16 @@ const files = [
   // More files...
 ];
 
-const unsplash = createApi({
-  accessKey: 'NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s',
-});
-
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
 export default function dashboard() {
   const router = useRouter();
-  const [phrase, setPhrase] = useState('');
-  const [images, setImages] = useState([]);
+  const [photo, setPhoto] = useState('');
+  const [result, setResult] = useState<UnsplashResult>();
 
   // eslint-disable-next-line @typescript-eslint/no-inferrable-types
-  function getUnsplashImages(query: any, page: number = 1) {
-    return new Promise((resolve, reject) => {
-      unsplash.search
-        .getPhotos({
-          query,
-          page,
-          perPage: 5,
-        })
-        .then((result) => {
-          resolve(
-            result.response?.results.map((result) => result.urls.regular)
-          );
-        });
-    });
-  }
-
-  useEffect(() => {
-    if (phrase !== '') {
-      getUnsplashImages(phrase);
-    }
-  }, [phrase]);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('auth');
@@ -75,6 +53,14 @@ export default function dashboard() {
       router.push('/auth/login');
     }
   }, [router]);
+
+  const changePhotoHandler = async () => {
+    const response = await axios.get(
+      `https://api.unsplash.com/search/photos?page=1&query=${photo}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
+    );
+    setResult(response.data.results);
+    console.log(result);
+  };
 
   return (
     <>
@@ -105,17 +91,6 @@ export default function dashboard() {
                         />
                       </div>
                     </div>
-                    <div></div>
-
-                    <input
-                      name='mobile-search-field'
-                      id='mobile-search-field'
-                      className='h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:border-transparent focus:placeholder-gray-400 focus:outline-none focus:ring-0 sm:hidden'
-                      placeholder='Search'
-                      type='search'
-                      value={phrase}
-                      onChange={(e) => setPhrase(e.target.value)}
-                    />
 
                     <input
                       name='desktop-search-field'
@@ -123,12 +98,16 @@ export default function dashboard() {
                       className='hidden h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:border-transparent focus:placeholder-gray-400 focus:outline-none focus:ring-0 sm:block'
                       placeholder='Search all files'
                       type='search'
-                      value={phrase}
-                      onChange={(e) => setPhrase(e.target.value)}
+                      value={photo}
+                      onChange={(e) => {
+                        setPhoto(e.target.value);
+                      }}
                     />
-                    {images.length > 0 &&
-                      images.map((url) => <img src={url} key={url} />)}
                   </div>
+                  <button onClick={changePhotoHandler} type='button'>
+                    Image
+                  </button>
+                  <div className='container'></div>
                 </form>
               </div>
               <Logout />

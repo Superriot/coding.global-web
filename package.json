@@ -33,6 +33,7 @@
     "react-dom": "^18.1.0",
     "react-icons": "^4.4.0",
     "tailwind-merge": "^1.6.0",
+    "unsplash": "^4.2.0",
     "unsplash-js": "^7.0.15"
   },
   "devDependencies": {
