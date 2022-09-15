@@ -1,12 +1,17 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @next/next/no-img-element */
 import {
   PencilIcon,
   PlusIcon as PlusIconMini,
 } from '@heroicons/react/20/solid';
 import { HeartIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
-const DashboardSidebar = () => {
+import { UnsplashImage } from '@/types';
+
+interface DashboardSidebarProps {
+  image?: UnsplashImage;
+}
+
+const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ image }) => {
   const currentFile = {
     name: 'IMG_4985.HEIC',
     size: '3.9 MB',
@@ -41,7 +46,15 @@ const DashboardSidebar = () => {
       <div className='space-y-6 pb-16'>
         <div>
           <div className='aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg'>
-            <img src={currentFile.source} alt='' className='object-cover' />
+            {image && (
+              <Image
+                width={250}
+                height={250}
+                src={image.urls.regular}
+                alt=''
+                className='object-cover'
+              />
+            )}
           </div>
           <div className='mt-4 flex items-start justify-between'>
             <div>
@@ -65,18 +78,18 @@ const DashboardSidebar = () => {
         <div>
           <h3 className='font-medium text-gray-900'>Information</h3>
           <dl className='mt-2 divide-y divide-gray-200 border-t border-b border-gray-200'>
-            {Object.keys(currentFile.information).map((key) => (
+            <div>{image?.created_at}</div>
+            {/* {Object.keys(currentFile.information).map((key) => (
               <div
                 key={key}
                 className='flex justify-between py-3 text-sm font-medium'
               >
                 <dt className='text-gray-500'>{key}</dt>
                 <dd className='whitespace-nowrap text-gray-900'>
-                  {/* @ts-ignore */}
-                  {currentFile.information[key]}
+                  {(currentFile as any).information[key]}
                 </dd>
               </div>
-            ))}
+            ))} */}
           </dl>
         </div>
         <div>
@@ -106,7 +119,9 @@ const DashboardSidebar = () => {
                 className='flex items-center justify-between py-3'
               >
                 <div className='flex items-center'>
-                  <img
+                  <Image
+                    width={50}
+                    height={50}
                     src={person.imageUrl}
                     alt=''
                     className='h-8 w-8 rounded-full'

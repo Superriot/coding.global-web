@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable unused-imports/no-unused-vars */
 import {
   Bars4Icon,
   MagnifyingGlassIcon,
@@ -14,17 +12,13 @@ import DashboardSidebar from '@/components/elements/DashboardSidebar';
 
 import Logout from '../../components/elements/Logout';
 
-import { UnsplashResult } from '@/types';
+import { UnsplashImage, UnsplashResult } from '@/types';
 
-type states = {
-  save: any;
-};
-
-export default function Dashboard(props: states) {
+export default function Dashboard() {
   const router = useRouter();
   const [query, setQuery] = useState<string>('');
   const [unsplashResult, setUnsplashResult] = useState<UnsplashResult>();
-  const [save, setSave] = useState(props);
+  const [detailsImage, setDetailsImage] = useState<UnsplashImage>();
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
@@ -99,7 +93,7 @@ export default function Dashboard(props: states) {
                 <h1 className='flex-1 text-2xl font-bold text-white'>
                   Photos
                   <div className='mt-20 grid gap-4 px-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-                    {unsplashResult?.results.map((image: any) => (
+                    {unsplashResult?.results.map((image) => (
                       <div key={image.id} className='text-white'>
                         <div className='grid grid-cols-2 gap-4'>
                           <Image
@@ -107,7 +101,7 @@ export default function Dashboard(props: states) {
                             alt=''
                             width={200}
                             height={200}
-                            onClick={() => setSave(image)}
+                            onClick={() => setDetailsImage(image)}
                           />
                         </div>
                       </div>
@@ -144,52 +138,11 @@ export default function Dashboard(props: states) {
                 <h2 id='gallery-heading' className='sr-only'>
                   Recently viewed
                 </h2>
-
-                {/* <ul
-                  role='list'
-                  className='grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'
-                >
-                  {files.map((file) => (
-                    <li key={file.name} className='relative'>
-                      <div
-                        className={classNames(
-                          file.current
-                            ? 'ring-2 ring-indigo-500 ring-offset-2'
-                            : 'focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100',
-                          'aspect-w-10 aspect-h-7 group block w-full overflow-hidden rounded-lg bg-gray-100'
-                        )}
-                      >
-                        <img
-                          src={file.source}
-                          alt=''
-                          className={classNames(
-                            file.current ? '' : 'group-hover:opacity-75',
-                            'pointer-events-none object-cover'
-                          )}
-                        />
-                        <button
-                          type='button'
-                          className='absolute inset-0 focus:outline-none'
-                        >
-                          <span className='sr-only'>
-                            View details for {file.name}
-                          </span>
-                        </button>
-                      </div>
-                      <p className='pointer-events-none mt-2 block truncate text-sm font-medium text-white'>
-                        {file.name}
-                      </p>
-                      <p className='pointer-events-none block text-sm font-medium text-white'>
-                        {file.size}
-                      </p>
-                    </li>
-                  ))}
-                </ul> */}
               </section>
             </div>
           </main>
 
-          <DashboardSidebar />
+          <DashboardSidebar image={detailsImage} />
         </div>
       </div>
     </>
