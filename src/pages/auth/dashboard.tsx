@@ -1,15 +1,3 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-console */
-/* eslint-disable unused-imports/no-unused-vars */
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable react/no-children-prop */
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import {
   Bars4Icon,
   MagnifyingGlassIcon,
@@ -23,99 +11,69 @@ import DashboardSidebar from '@/components/elements/DashboardSidebar';
 
 import Logout from '../../components/elements/Logout';
 
-const files = [
-  {
-    name: 'IMG_4985.HEIC',
-    size: '3.9 MB',
-    source:
-      'https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80',
-    current: true,
-  },
-  // More files...
-];
+import { UnsplashResult } from '@/types';
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
-
-export default function dashboard() {
+export default function Dashboard() {
   const router = useRouter();
-  const [photo, setPhoto] = useState();
-  const [result, setResult] = useState('') as any;
-
-  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
+  const [query, setQuery] = useState<string>('');
+  const [unsplashResult, setUnsplashResult] = useState<UnsplashResult>();
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('auth');
-    if (!loggedInUser) {
-      router.push('/auth/login');
-    }
+    if (!loggedInUser) router.push('/auth/login');
   }, [router]);
 
   const changePhotoHandler = async () => {
-    const response = await axios.get(
-      `https://api.unsplash.com/search/photos?page=1&query=${result}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
+    const response = await axios.get<UnsplashResult>(
+      `https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
     );
-
-    setResult(response.data.results);
-
-    console.log(result);
+    setUnsplashResult(response.data);
   };
 
   return (
     <>
-      {/* Mobile menu */}
-
-      {/* Content area */}
       <div className='flex flex-1 flex-col overflow-hidden'>
         <header className='w-full'>
           <div className='relative z-10 flex h-16 flex-shrink-0 border-b border-gray-200 bg-white shadow-sm'>
             <span className='sr-only'>Open sidebar</span>
             <div className='flex flex-1 justify-between px-4 sm:px-6'>
               <div className='flex flex-1'>
-                <form className='flex w-full md:ml-0' action='#' method='GET'>
-                  <label htmlFor='desktop-search-field' className='sr-only'>
-                    Search all files
-                  </label>
+                <label htmlFor='desktop-search-field' className='sr-only'>
+                  Search all files
+                </label>
 
-                  <label htmlFor='mobile-search-field' className='sr-only'>
-                    Search all files
-                  </label>
+                <label htmlFor='mobile-search-field' className='sr-only'>
+                  Search all files
+                </label>
 
-                  <div className='relative w-full text-gray-400 focus-within:text-gray-600'>
-                    <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center'>
-                      <div>
-                        <MagnifyingGlassIcon
-                          className='h-5 w-5 flex-shrink-0'
-                          aria-hidden='true'
-                        />
-                      </div>
+                <div className='relative w-full text-gray-400 focus-within:text-gray-600'>
+                  <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center'>
+                    <div>
+                      <MagnifyingGlassIcon
+                        className='h-5 w-5 flex-shrink-0'
+                        aria-hidden='true'
+                      />
                     </div>
-
-                    <input
-                      name='desktop-search-field'
-                      id='desktop-search-field'
-                      className='hidden h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:border-transparent focus:placeholder-gray-400 focus:outline-none focus:ring-0 sm:block'
-                      placeholder='Search all files'
-                      type='search'
-                      onChange={(e) => {
-                        setResult(e.target.value);
-                      }}
-                    />
                   </div>
-                  <button onClick={changePhotoHandler} type='button'>
-                    Search
-                  </button>
 
-                  <div className='container'></div>
-                </form>
+                  <input
+                    name='desktop-search-field'
+                    id='desktop-search-field'
+                    className='hidden h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:border-transparent focus:placeholder-gray-400 focus:outline-none focus:ring-0 sm:block'
+                    placeholder='Search all files'
+                    type='search'
+                    onChange={(e) => setQuery(e.target.value)}
+                  />
+                </div>
+                <button onClick={changePhotoHandler} type='button'>
+                  Search
+                </button>
               </div>
               <Logout />
             </div>
           </div>
         </header>
 
-        {/* Main content */}
         <div className='flex flex-1 items-stretch overflow-hidden'>
           <main className='flex-1 overflow-y-auto'>
             <div className='mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8'>
@@ -154,6 +112,12 @@ export default function dashboard() {
                 <h2 id='gallery-heading' className='sr-only'>
                   Recently viewed
                 </h2>
+                {unsplashResult?.results.map((image) => (
+                  <div key={image.id} className='text-white'>
+                    {image.urls.regular}
+                  </div>
+                ))}
+
                 {/* <ul
                   role='list'
                   className='grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'
@@ -168,7 +132,7 @@ export default function dashboard() {
                           'aspect-w-10 aspect-h-7 group block w-full overflow-hidden rounded-lg bg-gray-100'
                         )}
                       >
-                        {/* <img
+                        <img
                           src={file.source}
                           alt=''
                           className={classNames(
@@ -183,8 +147,8 @@ export default function dashboard() {
                           <span className='sr-only'>
                             View details for {file.name}
                           </span>
-                        </button> */}
-                {/* </div>
+                        </button>
+                      </div>
                       <p className='pointer-events-none mt-2 block truncate text-sm font-medium text-white'>
                         {file.name}
                       </p>
@@ -193,12 +157,11 @@ export default function dashboard() {
                       </p>
                     </li>
                   ))}
-                </ul> * */}
+                </ul> */}
               </section>
             </div>
           </main>
 
-          {/* Details sidebar */}
           <DashboardSidebar />
         </div>
       </div>
