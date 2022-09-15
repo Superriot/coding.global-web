@@ -1,9 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable unused-imports/no-unused-vars */
 import {
   Bars4Icon,
   MagnifyingGlassIcon,
   Squares2X2Icon as Squares2X2IconMini,
 } from '@heroicons/react/20/solid';
 import axios from 'axios';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
@@ -13,10 +16,26 @@ import Logout from '../../components/elements/Logout';
 
 import { UnsplashResult } from '@/types';
 
-export default function Dashboard() {
+type states = {
+  save: any;
+};
+
+export default function Dashboard(props: states) {
   const router = useRouter();
   const [query, setQuery] = useState<string>('');
   const [unsplashResult, setUnsplashResult] = useState<UnsplashResult>();
+  const [save, setSave] = useState(props);
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(async () => {
+      const response = await axios.get<UnsplashResult>(
+        `https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
+      );
+      setUnsplashResult(response.data);
+    }, 3000);
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [query]);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('auth');
@@ -55,7 +74,6 @@ export default function Dashboard() {
                       />
                     </div>
                   </div>
-
                   <input
                     name='desktop-search-field'
                     id='desktop-search-field'
@@ -80,7 +98,21 @@ export default function Dashboard() {
               <div className='flex'>
                 <h1 className='flex-1 text-2xl font-bold text-white'>
                   Photos
-                  <div className='mt-20 grid gap-4 px-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'></div>
+                  <div className='mt-20 grid gap-4 px-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+                    {unsplashResult?.results.map((image: any) => (
+                      <div key={image.id} className='text-white'>
+                        <div className='grid grid-cols-2 gap-4'>
+                          <Image
+                            src={image.urls.small}
+                            alt=''
+                            width={200}
+                            height={200}
+                            onClick={() => setSave(image)}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </h1>
 
                 <div className='ml-6 flex items-center rounded-lg bg-gray-100 p-0.5 sm:hidden'>
@@ -108,15 +140,10 @@ export default function Dashboard() {
               {/* Tabs */}
 
               {/* Gallery */}
-              <section className='mt-8 pb-16' aria-labelledby='gallery-heading'>
+              <section className='' aria-labelledby='gallery-heading'>
                 <h2 id='gallery-heading' className='sr-only'>
                   Recently viewed
                 </h2>
-                {unsplashResult?.results.map((image) => (
-                  <div key={image.id} className='text-white'>
-                    {image.urls.regular}
-                  </div>
-                ))}
 
                 {/* <ul
                   role='list'

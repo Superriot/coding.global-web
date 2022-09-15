@@ -7,7 +7,7 @@ module.exports = {
   reactStrictMode: true,
 
   images: {
-    domains: ['discord.com'],
+    domains: ['discord.com', "images.unsplash.com"],
   },
 
   // SVGR

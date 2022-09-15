@@ -15,6 +15,7 @@ const DashboardSidebar = () => {
     information: {
       'Uploaded by': 'Marie Culver',
       Created: 'June 8, 2020',
+
       'Last modified': 'June 8, 2020',
       Dimensions: '4032 x 3024',
       Resolution: '72 x 72',
