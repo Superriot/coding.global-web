@@ -23,8 +23,6 @@ import DashboardSidebar from '@/components/elements/DashboardSidebar';
 
 import Logout from '../../components/elements/Logout';
 
-import { UnsplashResult } from '@/types';
-
 const files = [
   {
     name: 'IMG_4985.HEIC',
@@ -42,8 +40,8 @@ function classNames(...classes: string[]) {
 
 export default function dashboard() {
   const router = useRouter();
-  const [photo, setPhoto] = useState('');
-  const [result, setResult] = useState<UnsplashResult>();
+  const [photo, setPhoto] = useState();
+  const [result, setResult] = useState('') as any;
 
   // eslint-disable-next-line @typescript-eslint/no-inferrable-types
 
@@ -56,9 +54,11 @@ export default function dashboard() {
 
   const changePhotoHandler = async () => {
     const response = await axios.get(
-      `https://api.unsplash.com/search/photos?page=1&query=${photo}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
+      `https://api.unsplash.com/search/photos?page=1&query=${result}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
     );
+
     setResult(response.data.results);
+
     console.log(result);
   };
 
@@ -98,15 +98,15 @@ export default function dashboard() {
                       className='hidden h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:border-transparent focus:placeholder-gray-400 focus:outline-none focus:ring-0 sm:block'
                       placeholder='Search all files'
                       type='search'
-                      value={photo}
                       onChange={(e) => {
-                        setPhoto(e.target.value);
+                        setResult(e.target.value);
                       }}
                     />
                   </div>
                   <button onClick={changePhotoHandler} type='button'>
-                    Image
+                    Search
                   </button>
+
                   <div className='container'></div>
                 </form>
               </div>
@@ -120,7 +120,11 @@ export default function dashboard() {
           <main className='flex-1 overflow-y-auto'>
             <div className='mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8'>
               <div className='flex'>
-                <h1 className='flex-1 text-2xl font-bold text-white'>Photos</h1>
+                <h1 className='flex-1 text-2xl font-bold text-white'>
+                  Photos
+                  <div className='mt-20 grid gap-4 px-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'></div>
+                </h1>
+
                 <div className='ml-6 flex items-center rounded-lg bg-gray-100 p-0.5 sm:hidden'>
                   <button
                     type='button'
@@ -150,7 +154,7 @@ export default function dashboard() {
                 <h2 id='gallery-heading' className='sr-only'>
                   Recently viewed
                 </h2>
-                <ul
+                {/* <ul
                   role='list'
                   className='grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'
                 >
@@ -164,7 +168,7 @@ export default function dashboard() {
                           'aspect-w-10 aspect-h-7 group block w-full overflow-hidden rounded-lg bg-gray-100'
                         )}
                       >
-                        <img
+                        {/* <img
                           src={file.source}
                           alt=''
                           className={classNames(
@@ -179,8 +183,8 @@ export default function dashboard() {
                           <span className='sr-only'>
                             View details for {file.name}
                           </span>
-                        </button>
-                      </div>
+                        </button> */}
+                {/* </div>
                       <p className='pointer-events-none mt-2 block truncate text-sm font-medium text-white'>
                         {file.name}
                       </p>
@@ -189,7 +193,7 @@ export default function dashboard() {
                       </p>
                     </li>
                   ))}
-                </ul>
+                </ul> * */}
               </section>
             </div>
           </main>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module '@heroicons/react/24/outline';
 declare module '@heroicons/react/outline';
 declare module '@heroicons/react/20/solid';
@@ -30,11 +31,11 @@ export type UnsplashResult = {
       download: string;
       download_location: string;
     };
-    // categories: Array<any>
+    categories: Array<any>;
     likes: number;
     liked_by_user: boolean;
-    // current_user_collections: Array<any>
-    // sponsorship: any
+    current_user_collections: Array<any>;
+    sponsorship: any;
     topic_submissions: {
       friends?: {
         status: string;
@@ -76,7 +77,7 @@ export type UnsplashResult = {
         instagram_username?: string;
         portfolio_url?: string;
         twitter_username?: string;
-        // paypal_email: any
+        paypal_email: any;
       };
     };
     tags: Array<{
