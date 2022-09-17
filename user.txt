@@ -15,3 +15,9 @@
 1.1 wen sie nicht existiert return res.status 
 1.2 wen sie existier mit find daten(email, password) suchen 
 2. richtig oder falsch 
+
+
+
+1. request wen scroll nach unten (useRef)
+2. states kombinieren
+3. response mit state kombinieren

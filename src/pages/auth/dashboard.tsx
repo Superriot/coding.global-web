@@ -1,8 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable simple-import-sort/imports */
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 import DashboardSidebar from '@/components/elements/DashboardSidebar';
 
@@ -10,16 +12,19 @@ import Logout from '../../components/elements/Logout';
 
 import { UnsplashImage, UnsplashResult } from '@/types';
 
+import Image from 'next/image';
+
 export default function Dashboard() {
   const router = useRouter();
   const [query, setQuery] = useState<string>('programming');
   const [unsplashResult, setUnsplashResult] = useState<UnsplashResult>();
   const [detailsImage, setDetailsImage] = useState<UnsplashImage>();
+  const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
       const response = await axios.get<UnsplashResult>(
-        `https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
+        `https://api.unsplash.com/search/photos?per_page=30&page=1&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
       );
       setUnsplashResult(response.data);
     }, 1000);
@@ -32,12 +37,22 @@ export default function Dashboard() {
     if (!loggedInUser) router.push('/auth/login');
   }, [router]);
 
-  const changePhotoHandler = async () => {
+  const changePhotoHandler = async (pageNumber: any) => {
     const response = await axios.get<UnsplashResult>(
-      `https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
+      `https://api.unsplash.com/search/photos?page=${pageNumber}&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
     );
     setUnsplashResult(response.data);
   };
+
+  useEffect(() => {
+    changePhotoHandler(pageNumber);
+  }, [pageNumber]);
+
+  const loadMore = () => {
+    setPageNumber((prevPageNumber: any) => prevPageNumber + 1);
+  };
+
+  const pageEnd = useRef<any>();
 
   return (
     <>
@@ -92,11 +107,17 @@ export default function Dashboard() {
               <div className='flex'>
                 <h1 className='flex-1 text-2xl font-bold text-white'>
                   Photos
-                  <div className='grid-template-columns: repeat(auto-fill, minmax(200px,1fr)) grid grid-flow-col grid-rows-3 gap-4'>
+                  <div className='unsplash-container'>
                     {unsplashResult?.results.map((image) => (
-                      <div key={image.id} className='text-white'>
-                        <img
-                          src={image.urls.small}
+                      <div
+                        key={image.id}
+                        className='inline-block duration-1000 hover:scale-150 hover:animate-pulse	'
+                      >
+                        {/* height 3473 width 5209 */}
+                        <Image
+                          height={image.height}
+                          width={image.width}
+                          src={image.urls.regular}
                           alt=''
                           onClick={() => setDetailsImage(image)}
                         />
@@ -118,6 +139,13 @@ export default function Dashboard() {
           </main>
           {detailsImage && <DashboardSidebar image={detailsImage} />}
         </div>
+        <button
+          onClick={loadMore}
+          className='rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700'
+          ref={pageEnd}
+        >
+          See More
+        </button>
       </div>
     </>
   );
