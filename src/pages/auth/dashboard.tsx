@@ -1,10 +1,6 @@
-import {
-  Bars4Icon,
-  MagnifyingGlassIcon,
-  Squares2X2Icon as Squares2X2IconMini,
-} from '@heroicons/react/20/solid';
+/* eslint-disable @next/next/no-img-element */
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 import axios from 'axios';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
@@ -16,7 +12,7 @@ import { UnsplashImage, UnsplashResult } from '@/types';
 
 export default function Dashboard() {
   const router = useRouter();
-  const [query, setQuery] = useState<string>('');
+  const [query, setQuery] = useState<string>('programming');
   const [unsplashResult, setUnsplashResult] = useState<UnsplashResult>();
   const [detailsImage, setDetailsImage] = useState<UnsplashImage>();
 
@@ -26,7 +22,7 @@ export default function Dashboard() {
         `https://api.unsplash.com/search/photos?page=1&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
       );
       setUnsplashResult(response.data);
-    }, 3000);
+    }, 1000);
 
     return () => clearTimeout(delayDebounceFn);
   }, [query]);
@@ -77,7 +73,11 @@ export default function Dashboard() {
                     onChange={(e) => setQuery(e.target.value)}
                   />
                 </div>
-                <button onClick={changePhotoHandler} type='button'>
+                <button
+                  onClick={changePhotoHandler}
+                  type='button'
+                  className='mr-40'
+                >
                   Search
                 </button>
               </div>
@@ -92,43 +92,18 @@ export default function Dashboard() {
               <div className='flex'>
                 <h1 className='flex-1 text-2xl font-bold text-white'>
                   Photos
-                  <div className='mt-20 grid gap-4 px-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+                  <div className='grid-template-columns: repeat(auto-fill, minmax(200px,1fr)) grid grid-flow-col grid-rows-3 gap-4'>
                     {unsplashResult?.results.map((image) => (
                       <div key={image.id} className='text-white'>
-                        <div className='grid grid-cols-2 gap-4'>
-                          <Image
-                            src={image.urls.small}
-                            alt=''
-                            width={200}
-                            height={200}
-                            onClick={() => setDetailsImage(image)}
-                          />
-                        </div>
+                        <img
+                          src={image.urls.small}
+                          alt=''
+                          onClick={() => setDetailsImage(image)}
+                        />
                       </div>
                     ))}
                   </div>
                 </h1>
-
-                <div className='ml-6 flex items-center rounded-lg bg-gray-100 p-0.5 sm:hidden'>
-                  <button
-                    type='button'
-                    className='rounded-md p-1.5 text-gray-400 hover:bg-white hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'
-                  >
-                    <Bars4Icon className='h-5 w-5' aria-hidden='true' />
-                    <span className='sr-only'>Use list view</span>
-                  </button>
-
-                  <button
-                    type='button'
-                    className='ml-0.5 rounded-md bg-white p-1.5 text-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'
-                  >
-                    <Squares2X2IconMini
-                      className='h-5 w-5'
-                      aria-hidden='true'
-                    />
-                    <span className='sr-only'>Use grid view</span>
-                  </button>
-                </div>
               </div>
 
               {/* Tabs */}
@@ -141,8 +116,7 @@ export default function Dashboard() {
               </section>
             </div>
           </main>
-
-          <DashboardSidebar image={detailsImage} />
+          {detailsImage && <DashboardSidebar image={detailsImage} />}
         </div>
       </div>
     </>
