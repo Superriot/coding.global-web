@@ -52,7 +52,7 @@ export default function Dashboard() {
     setPageNumber((prevPageNumber: any) => prevPageNumber + 1);
   };
 
-  const pageEnd = useRef<any>();
+  const pageEnd = useRef<HTMLButtonElement>(null);
 
   return (
     <>
