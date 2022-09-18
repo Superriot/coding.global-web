@@ -1,3 +1,4 @@
+/* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable simple-import-sort/imports */
@@ -19,7 +20,8 @@ export default function Dashboard() {
   const [query, setQuery] = useState<string>('programming');
   const [unsplashResult, setUnsplashResult] = useState<UnsplashResult>();
   const [detailsImage, setDetailsImage] = useState<UnsplashImage>();
-  const [pageNumber, setPageNumber] = useState(1);
+  const myRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
@@ -37,22 +39,55 @@ export default function Dashboard() {
     if (!loggedInUser) router.push('/auth/login');
   }, [router]);
 
-  const changePhotoHandler = async (pageNumber: any) => {
-    const response = await axios.get<UnsplashResult>(
+  const result = async (pageNumber: any) => {
+    setLoading(true);
+    const response: any = await axios.get<UnsplashResult>(
       `https://api.unsplash.com/search/photos?page=${pageNumber}&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
     );
+    setLoading(false);
     setUnsplashResult(response.data);
   };
 
-  useEffect(() => {
-    changePhotoHandler(pageNumber);
-  }, [pageNumber]);
+  // useEffect(() => {
+  //   changePhotoHandler(pageNumber);
+  // }, [pageNumber]);
 
-  const loadMore = () => {
-    setPageNumber((prevPageNumber: any) => prevPageNumber + 1);
+  // const loadMore = () => {
+  //   setPageNumber((prevPageNumber: any) => prevPageNumber + 1);
+  // };
+
+  // const pageEnd = useRef<any>(null);
+  // let num = 1
+  // useEffect(() => {
+  //   if (loading) {
+  //     const observer = new IntersectionObserver(
+  //       (erntries) => {
+  //         if (erntries[0].isIntersecting && loadMore) {
+  //           num++
+  //           loadMore();
+  //           if(num >= 5) {
+  //             observer.unobserve(pageEnd.current)
+  //           }
+  //         }
+  //       },
+  //       { threshold: 1 }
+  //     );
+  //     observer.observe(pageEnd.current);
+  //   }
+  // }, [loading, num]);
+
+  const onScroll = async () => {
+    const bottom =
+      myRef.current &&
+      myRef.current.scrollHeight - myRef.current.scrollTop ===
+        myRef.current.clientHeight;
+
+    if (bottom) {
+      const response = await axios.get<UnsplashResult>(
+        `https://api.unsplash.com/search/photos?per_page=30&page=1&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
+      );
+    }
   };
-
-  const pageEnd = useRef<HTMLButtonElement>(null);
 
   return (
     <>
@@ -88,13 +123,13 @@ export default function Dashboard() {
                     onChange={(e) => setQuery(e.target.value)}
                   />
                 </div>
-                <button
+                {/* <button
                   onClick={changePhotoHandler}
                   type='button'
                   className='mr-40'
                 >
                   Search
-                </button>
+                </button> */}
               </div>
               <Logout />
             </div>
@@ -102,7 +137,11 @@ export default function Dashboard() {
         </header>
 
         <div className='flex flex-1 items-stretch overflow-hidden'>
-          <main className='flex-1 overflow-y-auto'>
+          <main
+            className='flex-1 overflow-y-auto'
+            onScroll={onScroll}
+            ref={myRef}
+          >
             <div className='mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8'>
               <div className='flex'>
                 <h1 className='flex-1 text-2xl font-bold text-white'>
@@ -139,13 +178,13 @@ export default function Dashboard() {
           </main>
           {detailsImage && <DashboardSidebar image={detailsImage} />}
         </div>
-        <button
+        {/* <button
           onClick={loadMore}
           className='rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700'
           ref={pageEnd}
         >
           See More
-        </button>
+        </button> */}
       </div>
     </>
   );

@@ -45,7 +45,7 @@ const data = [
   {
     username: 'Jiren',
     img: jiren,
-    text: 'Hey I am Jiren and I do nothing for the server',
+    text: 'hey i am jiren and i help people on the server',
   },
   {
     username: 'Martin',
