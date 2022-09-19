@@ -21,7 +21,7 @@ export default function Dashboard() {
   const [unsplashResult, setUnsplashResult] = useState<UnsplashResult>();
   const [detailsImage, setDetailsImage] = useState<UnsplashImage>();
   const myRef = useRef<HTMLDivElement>(null);
-  const [pageNumber, setPageNumber] = useState<any>(1);
+  const [pageNumber, setPageNumber] = useState<number>(1);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('auth');
