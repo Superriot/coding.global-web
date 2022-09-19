@@ -20,8 +20,9 @@ export default function Dashboard() {
   const [query, setQuery] = useState<string>('programming');
   const [unsplashResult, setUnsplashResult] = useState<UnsplashResult>();
   const [detailsImage, setDetailsImage] = useState<UnsplashImage>();
-  const myRef = useRef<HTMLDivElement>(null);
+  const myRef = useRef<any>();
   const [loading, setLoading] = useState(false);
+  const [pageNumber, setPageNumber] = useState<any>(1);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
@@ -39,44 +40,7 @@ export default function Dashboard() {
     if (!loggedInUser) router.push('/auth/login');
   }, [router]);
 
-  const result = async (pageNumber: any) => {
-    setLoading(true);
-    const response: any = await axios.get<UnsplashResult>(
-      `https://api.unsplash.com/search/photos?page=${pageNumber}&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
-    );
-    setLoading(false);
-    setUnsplashResult(response.data);
-  };
-
-  // useEffect(() => {
-  //   changePhotoHandler(pageNumber);
-  // }, [pageNumber]);
-
-  // const loadMore = () => {
-  //   setPageNumber((prevPageNumber: any) => prevPageNumber + 1);
-  // };
-
-  // const pageEnd = useRef<any>(null);
-  // let num = 1
-  // useEffect(() => {
-  //   if (loading) {
-  //     const observer = new IntersectionObserver(
-  //       (erntries) => {
-  //         if (erntries[0].isIntersecting && loadMore) {
-  //           num++
-  //           loadMore();
-  //           if(num >= 5) {
-  //             observer.unobserve(pageEnd.current)
-  //           }
-  //         }
-  //       },
-  //       { threshold: 1 }
-  //     );
-  //     observer.observe(pageEnd.current);
-  //   }
-  // }, [loading, num]);
-
-  const onScroll = async () => {
+  const onScroll = async (pageNumber: any) => {
     const bottom =
       myRef.current &&
       myRef.current.scrollHeight - myRef.current.scrollTop ===
@@ -84,9 +48,20 @@ export default function Dashboard() {
 
     if (bottom) {
       const response = await axios.get<UnsplashResult>(
-        `https://api.unsplash.com/search/photos?per_page=30&page=1&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
+        `https://api.unsplash.com/search/photos?per_page=30&page=${pageNumber}&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
       );
+      const newUnsplashResult = response.data;
+      // console.log(newUnsplashResult.results)
     }
+    // console.log('H12123');
+  };
+
+  useEffect(() => {
+    onScroll(pageNumber);
+  }, [pageNumber]);
+
+  const loadMore = () => {
+    setPageNumber((prevPageNumber: any) => prevPageNumber + 1);
   };
 
   return (
@@ -123,22 +98,15 @@ export default function Dashboard() {
                     onChange={(e) => setQuery(e.target.value)}
                   />
                 </div>
-                {/* <button
-                  onClick={changePhotoHandler}
-                  type='button'
-                  className='mr-40'
-                >
-                  Search
-                </button> */}
               </div>
               <Logout />
             </div>
           </div>
         </header>
 
-        <div className='flex flex-1 items-stretch overflow-hidden'>
+        <div className='flex flex-1 items-stretch'>
           <main
-            className='flex-1 overflow-y-auto'
+            className='h-[80vh] flex-1 overflow-y-auto'
             onScroll={onScroll}
             ref={myRef}
           >
@@ -166,8 +134,6 @@ export default function Dashboard() {
                 </h1>
               </div>
 
-              {/* Tabs */}
-
               {/* Gallery */}
               <section className='' aria-labelledby='gallery-heading'>
                 <h2 id='gallery-heading' className='sr-only'>
@@ -178,13 +144,6 @@ export default function Dashboard() {
           </main>
           {detailsImage && <DashboardSidebar image={detailsImage} />}
         </div>
-        {/* <button
-          onClick={loadMore}
-          className='rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700'
-          ref={pageEnd}
-        >
-          See More
-        </button> */}
       </div>
     </>
   );

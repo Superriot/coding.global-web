@@ -18,7 +18,7 @@ html {
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 2px;
   height: 2px;
 }
@@ -50,12 +50,12 @@ html {
 }
 ::-webkit-scrollbar-corner {
   background: transparent;
-}
+} */
 
-input::-webkit-outer-spin-button,
+/* input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   display: none;
-}
+} */
 
 :root {
   --tw-color-primary-50: 240 249 255;
@@ -205,4 +205,9 @@ div[data-testid*='flowbite-accordion'] button:not([class*='text-gray-900']) {
 }
 .unset-img > div {
   position: unset !important;
+}
+
+html,
+body {
+  overflow: hidden;
 }
