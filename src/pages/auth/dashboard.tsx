@@ -53,7 +53,14 @@ export default function Dashboard() {
         }&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
       );
       const newUnsplashResult = response.data;
-      //// start here
+      setUnsplashResult({
+        ...unsplashResult,
+        ...newUnsplashResult,
+        results: [
+          ...(unsplashResult?.results ?? []),
+          ...newUnsplashResult.results,
+        ],
+      });
     }
   };
 
