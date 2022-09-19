@@ -20,9 +20,13 @@ export default function Dashboard() {
   const [query, setQuery] = useState<string>('programming');
   const [unsplashResult, setUnsplashResult] = useState<UnsplashResult>();
   const [detailsImage, setDetailsImage] = useState<UnsplashImage>();
-  const myRef = useRef<any>();
-  const [loading, setLoading] = useState(false);
+  const myRef = useRef<HTMLDivElement>(null);
   const [pageNumber, setPageNumber] = useState<any>(1);
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('auth');
+    if (!loggedInUser) router.push('/auth/login');
+  }, [router]);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
@@ -35,33 +39,21 @@ export default function Dashboard() {
     return () => clearTimeout(delayDebounceFn);
   }, [query]);
 
-  useEffect(() => {
-    const loggedInUser = localStorage.getItem('auth');
-    if (!loggedInUser) router.push('/auth/login');
-  }, [router]);
-
-  const onScroll = async (pageNumber: any) => {
+  const onScroll = async () => {
     const bottom =
       myRef.current &&
       myRef.current.scrollHeight - myRef.current.scrollTop ===
         myRef.current.clientHeight;
 
     if (bottom) {
+      setPageNumber(pageNumber + 1);
       const response = await axios.get<UnsplashResult>(
-        `https://api.unsplash.com/search/photos?per_page=30&page=${pageNumber}&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
+        `https://api.unsplash.com/search/photos?per_page=30&page=${
+          pageNumber + 1
+        }&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
       );
       const newUnsplashResult = response.data;
-      // console.log(newUnsplashResult.results)
     }
-    // console.log('H12123');
-  };
-
-  useEffect(() => {
-    onScroll(pageNumber);
-  }, [pageNumber]);
-
-  const loadMore = () => {
-    setPageNumber((prevPageNumber: any) => prevPageNumber + 1);
   };
 
   return (
@@ -106,7 +98,7 @@ export default function Dashboard() {
 
         <div className='flex flex-1 items-stretch'>
           <main
-            className='h-[80vh] flex-1 overflow-y-auto'
+            className='h-[95vh] flex-1 overflow-y-auto'
             onScroll={onScroll}
             ref={myRef}
           >
@@ -124,7 +116,7 @@ export default function Dashboard() {
                         <Image
                           height={image.height}
                           width={image.width}
-                          src={image.urls.regular}
+                          src={image.urls.small}
                           alt=''
                           onClick={() => setDetailsImage(image)}
                         />
