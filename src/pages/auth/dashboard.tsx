@@ -23,9 +23,10 @@ export default function Dashboard() {
   const myRef = useRef<HTMLDivElement>(null);
   const [pageNumber, setPageNumber] = useState<number>(1);
 
-  useEffect(() => {
-    !localStorage.getItem('auth') && router.push('/auth/login');
-  }, [router]);
+  useEffect(
+    () => void (!localStorage.getItem('auth') && router.push('/auth/login')),
+    [router]
+  );
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
