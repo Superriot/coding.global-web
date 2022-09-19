@@ -62,17 +62,8 @@ export default function Dashboard() {
       <div className='flex flex-1 flex-col overflow-hidden'>
         <header className='w-full'>
           <div className='relative z-10 flex h-16 flex-shrink-0 border-b border-gray-200 bg-white shadow-sm'>
-            <span className='sr-only'>Open sidebar</span>
             <div className='flex flex-1 justify-between px-4 sm:px-6'>
               <div className='flex flex-1'>
-                <label htmlFor='desktop-search-field' className='sr-only'>
-                  Search all files
-                </label>
-
-                <label htmlFor='mobile-search-field' className='sr-only'>
-                  Search all files
-                </label>
-
                 <div className='relative w-full text-gray-400 focus-within:text-gray-600'>
                   <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center'>
                     <div>
@@ -104,35 +95,24 @@ export default function Dashboard() {
             ref={myRef}
           >
             <div className='mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8'>
-              <div className='flex'>
-                <h1 className='flex-1 text-2xl font-bold text-white'>
-                  Photos
-                  <div className='unsplash-container'>
-                    {unsplashResult?.results.map((image) => (
-                      <div
-                        key={image.id}
-                        className='inline-block duration-1000 hover:scale-150 hover:animate-pulse	'
-                      >
-                        {/* height 3473 width 5209 */}
-                        <Image
-                          height={image.height}
-                          width={image.width}
-                          src={image.urls.small}
-                          alt='images'
-                          onClick={() => setDetailsImage(image)}
-                        />
-                      </div>
-                    ))}
+              <h1 className='flex-1 text-2xl font-bold text-white'>Photos</h1>
+              <div className='unsplash-container'>
+                {unsplashResult?.results.map((image) => (
+                  <div
+                    key={image.id}
+                    className='inline-block duration-1000 hover:scale-150 hover:animate-pulse	'
+                  >
+                    {/* height 3473 width 5209 */}
+                    <Image
+                      height={image.height}
+                      width={image.width}
+                      src={image.urls.small}
+                      alt='images'
+                      onClick={() => setDetailsImage(image)}
+                    />
                   </div>
-                </h1>
+                ))}
               </div>
-
-              {/* Gallery */}
-              <section className='' aria-labelledby='gallery-heading'>
-                <h2 id='gallery-heading' className='sr-only'>
-                  Recently viewed
-                </h2>
-              </section>
             </div>
           </main>
           {detailsImage && <DashboardSidebar image={detailsImage} />}
