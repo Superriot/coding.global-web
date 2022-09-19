@@ -24,8 +24,7 @@ export default function Dashboard() {
   const [pageNumber, setPageNumber] = useState<number>(1);
 
   useEffect(() => {
-    const loggedInUser = localStorage.getItem('auth');
-    if (!loggedInUser) router.push('/auth/login');
+    !localStorage.getItem('auth') && router.push('/auth/login');
   }, [router]);
 
   useEffect(() => {
@@ -53,6 +52,7 @@ export default function Dashboard() {
         }&query=${query}&client_id=NwZfngFJ6Lcw5p2yHkzY2vmzFvarjC6xm9ph3jRQE_s`
       );
       const newUnsplashResult = response.data;
+      //// start here
     }
   };
 
@@ -117,7 +117,7 @@ export default function Dashboard() {
                           height={image.height}
                           width={image.width}
                           src={image.urls.small}
-                          alt=''
+                          alt='images'
                           onClick={() => setDetailsImage(image)}
                         />
                       </div>
