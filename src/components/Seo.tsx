@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import { openGraph } from '@/lib/helper';
 
 const defaultMeta = {
-  title: 'Official Coding Website',
-  siteName: 'Official Coding Website',
+  title: 'Official Coding Discord Website',
+  siteName: 'Official Coding Discord Website',
   description:
     'Official discord.gg/coding Website for the Coding Discord Server',
   url: 'https://coding.global',
