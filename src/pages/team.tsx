@@ -54,7 +54,7 @@ const data = [
     username: 'Matze',
     img: matze,
     text: 'Hello I am Matze and help who someone needs help',
-  }
+  },
 ];
 
 export default function team() {
