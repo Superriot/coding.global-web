@@ -8,11 +8,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <NextImage
         useSkeleton
-        className='img-fade relative h-[50vh] object-top opacity-20 md:h-[100vh]'
+        className='img-fade relative h-[50vh] object-cover object-top opacity-20 md:h-[100vh]'
         imgClassName='object-top'
         src='/images/banner.webp'
-        objectFit='cover'
-        layout='fill'
+        fill
         priority={false}
         alt='Icon'
       />
