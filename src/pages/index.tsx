@@ -122,8 +122,8 @@ export default function HomePage() {
                 Don Cryptus
               </UnderlineLink>
               {' & '}
-              <UnderlineLink href='https://github.com/Az-er'>
-                Az-er
+              <UnderlineLink href='https://github.com/Bit-Barron'>
+                Barron
               </UnderlineLink>
               {' & '}
               <UnderlineLink href='https://github.com/Superriot'>
