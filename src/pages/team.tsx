@@ -5,7 +5,6 @@ import Seo from '@/components/Seo';
 
 import Header from '../components/elements/Header';
 import albo from '../../public/images/Team/albo.png';
-import anes from '../../public/images/Team/anes.ong.png';
 import don from '../../public/images/Team/don.png';
 import doniiboy from '../../public/images/Team/doniiboyJr.png';
 import en_Pilz from '../../public/images/Team/en_pilz.png';
@@ -13,7 +12,6 @@ import jiren from '../../public/images/Team/jiren.gif';
 import martin from '../../public/images/Team/martin.png';
 import matze from '../../public/images/Team/matze.png';
 import paddy from '../../public/images/Team/paddy.png';
-import steffen from '../../public/images/Team/steffen.png';
 
 const data = [
   {
@@ -56,17 +54,7 @@ const data = [
     username: 'Matze',
     img: matze,
     text: 'Hello I am Matze and help who someone needs help',
-  },
-  {
-    username: 'Steffen',
-    img: steffen,
-    text: 'Heyy I am Steffen and help very often and with pleasure!',
-  },
-  {
-    username: 'Anes',
-    img: anes,
-    text: 'Hey I am Anes and have no idea what to do here',
-  },
+  }
 ];
 
 export default function team() {
