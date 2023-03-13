@@ -39,3 +39,4 @@ sitemap.xml
 sitemap-*.xml
 user.txt
 user.json
+package-lock.json
