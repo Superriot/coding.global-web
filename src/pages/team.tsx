@@ -48,7 +48,7 @@ const data = [
   {
     username: 'Cook',
     img: cook,
-    text: 'Hey Im Cook and Im a moderator I make sure no one writes shit in the chats',
+    text: 'Hey Im Cook and Im a moderator I make sure no one writes shit in the chats and I am currently writing my thesis',
   },
   {
     username: 'Matze',
