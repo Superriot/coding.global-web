@@ -5,11 +5,11 @@ import Seo from '@/components/Seo';
 
 import Header from '../components/elements/Header';
 import albo from '../../public/images/Team/albo.png';
+import cook from '../../public/images/Team/cook.png';
 import don from '../../public/images/Team/don.png';
 import doniiboy from '../../public/images/Team/doniiboyJr.png';
 import en_Pilz from '../../public/images/Team/en_pilz.png';
 import jiren from '../../public/images/Team/jiren.gif';
-import cook from '../../public/images/Team/cook.png';
 import matze from '../../public/images/Team/matze.png';
 import paddy from '../../public/images/Team/paddy.png';
 
