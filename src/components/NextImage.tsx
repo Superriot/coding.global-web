@@ -8,7 +8,6 @@ type NextImageProps = {
   imgClassName?: string;
   blurClassName?: string;
   alt: string;
-  width?: string | number;
 } & (
   | { width: string | number; height: string | number }
   | { layout: 'fill'; width?: string | number; height?: string | number }
@@ -41,21 +40,18 @@ export default function NextImage({
       style={!widthIsSet ? { width: `${width}px` } : undefined}
       className={className}
     >
-      <>
-        <Image
-          className={clsxm(
-            imgClassName,
-            status === 'loading' && clsxm('animate-pulse', blurClassName)
-          )}
-          src={src}
-          width={width}
-          height={height}
-          alt={alt}
-          onLoadingComplete={() => setStatus('complete')}
-          layout='responsive'
-          {...rest}
-        />
-      </>
+      <Image
+        className={clsxm(
+          imgClassName,
+          status === 'loading' && clsxm('animate-pulse', blurClassName)
+        )}
+        src={src}
+        width={width}
+        height={height}
+        alt={alt}
+        onLoadingComplete={() => setStatus('complete')}
+        {...rest}
+      />
     </figure>
   );
 }
